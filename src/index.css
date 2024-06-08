@@ -6,7 +6,7 @@
 }
 .html {
   font-size: 62.5%;
-  scroll-behaviour:smooth;
+  scroll-behaviour: smooth;
 }
 /*homepage*/
 .interact-flex {
@@ -134,21 +134,20 @@
   width: 25rem;
 }
 
-
 /* button styles*/
-.btn{
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #EDE7F6;
-    color: #2B184D;
-    cursor: pointer;
-    font-size: 16px;
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ede7f6;
+  color: #2b184d;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .btn:hover {
-  background-color: #2B184D;
-  color:#EDE7F6;
+  background-color: #2b184d;
+  color: #ede7f6;
 }
 
 /* header styling */
@@ -162,7 +161,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 60px;
-  background-color: #673AB7;
+  background-color: #673ab7;
   border-bottom: 1px solid #e0e0e0;
   z-index: 1000; /*ensures it stays above other content */
   transition: opacity 0.3s ease;
@@ -189,15 +188,110 @@
 
 .header-nav-links a {
   text-decoration: none;
-  color: #EDE7F6;
+  color: #ede7f6;
 }
 
 .header-nav-links a:hover {
   text-decoration: underline;
-  color: #2B184D;
+  color: #2b184d;
 }
 
 .header-nav-buttons {
   display: flex;
   gap: 20px;
+}
+
+/* Faq.css 
+
+Others are in FaqSection.css in the FaqCss folder */
+.faq {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+.faq-question {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.faq-answer {
+  margin-top: 10px;
+  padding-left: 20px;
+  color: #ffff;
+}
+.faq-toggle {
+  font-size: 1.5em;
+  margin-left: 10px;
+}
+/* footer-css */
+.footer {
+  min-height: 50vh;
+}
+.footer-together {
+  margin-left: 6rem;
+}
+.footer-logo img {
+  width: 10rem;
+}
+.footer-together {
+  padding-top: 5rem;
+  display: flex;
+  column-gap: 10rem;
+  line-height: 2;
+}
+.footer-together a {
+  text-decoration: none;
+  color: #000;
+}
+.footer-together a:hover {
+  text-decoration: underline;
+  color: #673ab7;
+}
+.footer-content {
+  display: flex;
+  column-gap: 68rem;
+  padding-top: 2rem;
+  padding-left: 6rem;
+  padding-bottom: 1rem;
+  margin-top: 5rem;
+  color: white;
+  background-color: #673ab7;
+}
+
+/*CodePage css */
+.enter-code {
+  text-align: center;
+  background-color: #45277b;
+  min-height: 19rem;
+}
+.enter-code h1 {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  font-size: 3rem;
+  color: #fff;
+}
+.enter-code div {
+  padding-left: 1rem;
+}
+#code-input {
+  width: 23rem;
+  height: 4.5rem;
+  border-radius: 1rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  border: 0;
+  outline: 0;
+}
+.enter-code button {
+  position: absolute;
+  left: 55rem;
+  top: 12.2rem;
+  width: 4rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  background-color: #45277b;
+  color: white;
+  font-size: 1.3rem;
 }

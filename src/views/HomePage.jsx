@@ -1,6 +1,8 @@
 
-import Header from '../component/Button/Header';
-
+import Header from '../component/Header';
+import FaqSection from '../views/FaqSection';
+import { faqs } from '../data';
+import Footer from '../component/Footer'
 function HomePage() {
 
     return(
@@ -67,11 +69,13 @@ function HomePage() {
             </div>
             <div className="progress">
                 <h2>Progress Tracking</h2>
-                <p>Comprehensive  reports and intuitive dashboards provide clear insights into student performance and progress. 
-                    <span><h2 className="soon">Coming Soon!</h2></span>
-                </p>
+                <h3>Comprehensive  reports and intuitive dashboards provide clear insights into student performance and progress. 
+                    <span className="soon">Coming Soon!</span>
+                </h3>
             </div>
         </div>
+        <FaqSection faqs={faqs} />
+        <Footer/>
         </>
     )
 }
