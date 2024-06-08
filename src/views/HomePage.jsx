@@ -1,10 +1,12 @@
 
+import Header from '../component/Button/Header';
 
 function HomePage() {
 
     return(
         <>
-        <div className="interact-flex">
+        <Header/>
+        <div className="interact-flex" >
             <div className="interact">
                 <h2>Interactive Quizzes For Smarter Learning</h2>
                 <p>Transform your classroom into interactive learning hub with MyQuizPal
@@ -14,9 +16,10 @@ function HomePage() {
             <div className="img1">
                 <img src="src\assets\istockphoto-1490709077-170667a 1.png" alt="" />
             </div>
+            
         </div>
-        <div className="empower-flex">
-        <div className="img2">
+        <div className="empower-flex" id='teachers'>
+            <div className="img2">
                 <img src="src\assets\istockphoto-1286100048-612x612 1.png" alt="" />
             </div>
             <div className="empower">
@@ -25,7 +28,7 @@ function HomePage() {
                 </p>
             </div>
         </div>
-        <div className="learning-flex">
+        <div className="learning-flex" id="students">
             <div className="learning">
                 <h2>Learning Made Fun</h2>
                 <p>Experience a new way of learning with MyQuizPal. Interactive quizzes , instant feedback, and gamified element like badges and leaderboards make studying exciting and rewarding for students.
@@ -35,7 +38,7 @@ function HomePage() {
                 <img src="src\assets\unsplash_cbL3UVrDozk.png" alt="" />
             </div>
         </div>
-        <div className="key">
+        <div className="key" id='features'>
             <h1>KEY FEATURES</h1>
         </div>
         <div className="engage-flex">
