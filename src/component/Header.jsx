@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import Button from '../component/button';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 function Header(){
@@ -24,12 +24,17 @@ function Header(){
     return(
         <header className="header" style={{opacity}}>
             <nav className="header-nav">
-                <ul className="header-nav-links">
-                    <li><Link to="#teachers">For Teachers</Link></li>
-                    <li><Link to="#students">For students</Link></li>
-                    <li><Link to="#features">Features</Link></li>
-                    <li><Link to="#FAQs">FAQs</Link></li>
-                </ul>
+                <div className='header-logo-links'>
+                    <div className="logo-container">
+                        <img src="src\assets\MYQUIZA-removebg-preview.png" alt="Logo" className="logo" />
+                    </div>
+                    <ul className="header-nav-links">
+                        <li><a href="#teachers"> For Teachers </a></li>
+                        <li><a href='#students'>For students</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#FAQs">FAQs</a></li>
+                    </ul>
+                </div>
                 <div className="header-nav-buttons">
                     <Button text="Sign In" onClick={() => { window.location.href = '/signin'; }} />
                     <Button text="Sign Up" onClick={() => { window.location.href = '/signup'; }} />
