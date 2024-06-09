@@ -29,6 +29,31 @@
 .img1 img {
   width: 25rem;
 }
+.interact-button-1,
+.interact-button-2 {
+  display: inline-block; /* Ensures elements are side by side */
+  vertical-align: top; /* Aligns the top edges of the buttons */
+  margin-top: 2rem; /* Moves the buttons down */
+  padding-left: 0.5rem;
+}
+.interact-button-1 button {
+  background-color: #673ab7;
+  color: #fff;
+}
+.interact-button-1 button:hover {
+  background-color: #673ab7;
+}
+.interact-button-2 {
+  padding-left: 2rem;
+}
+.interact-button-2 button {
+  background-color: #ede7f6;
+  color: #45277b;
+}
+.interact-button-2 button:hover {
+  color: #45277b;
+  background-color: #ede7f6;
+}
 .empower-flex {
   display: flex;
   margin-top: 10rem;
@@ -227,7 +252,7 @@ Others are in FaqSection.css in the FaqCss folder */
 }
 /* footer-css */
 .footer {
-  min-height: 50vh;
+  height: 50vh;
 }
 .footer-together {
   margin-left: 6rem;
@@ -236,7 +261,8 @@ Others are in FaqSection.css in the FaqCss folder */
   width: 10rem;
 }
 .footer-together {
-  padding-top: 5rem;
+  min-height: 20vh;
+  padding-top: 4rem;
   display: flex;
   column-gap: 10rem;
   line-height: 2;
@@ -246,17 +272,16 @@ Others are in FaqSection.css in the FaqCss folder */
   color: #000;
 }
 .footer-together a:hover {
-  text-decoration: underline;
   color: #673ab7;
 }
 .footer-content {
   display: flex;
   column-gap: 68rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
   padding-left: 6rem;
   padding-bottom: 1rem;
-  margin-top: 5rem;
   color: white;
+  margin-top: 5rem;
   background-color: #673ab7;
 }
 
@@ -264,10 +289,10 @@ Others are in FaqSection.css in the FaqCss folder */
 .enter-code {
   text-align: center;
   background-color: #45277b;
-  min-height: 19rem;
+  min-height: 34rem;
 }
 .enter-code h1 {
-  padding-top: 5rem;
+  padding-top: 11rem;
   padding-bottom: 3rem;
   font-size: 3rem;
   color: #fff;
@@ -287,7 +312,7 @@ Others are in FaqSection.css in the FaqCss folder */
 .enter-code button {
   position: absolute;
   left: 55rem;
-  top: 12.2rem;
+  top: 18.2rem;
   width: 4rem;
   height: 3rem;
   border-radius: 0.5rem;

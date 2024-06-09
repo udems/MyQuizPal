@@ -2,6 +2,7 @@
 import Header from '../component/Header';
 import FaqSection from '../views/FaqSection';
 import { faqs } from '../data';
+import Button from '../component/button'
 import Footer from '../component/Footer'
 function HomePage() {
 
@@ -14,6 +15,10 @@ function HomePage() {
                 <p>Transform your classroom into interactive learning hub with MyQuizPal
                     dynamic quizzes and real-time feedback
                 </p>
+                <div className='interact-button-1'><Button text="Sign up Now" onClick={() => { window.location.href = '/signup'; }} /></div>
+                <div className='interact-button-2'>
+                <Button text="Sign up Now" onClick={() => { window.location.href = '/signup'; }} />
+                </div>
             </div>
             <div className="img1">
                 <img src="src\assets\istockphoto-1490709077-170667a 1.png" alt="" />
