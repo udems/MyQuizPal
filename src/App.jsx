@@ -1,5 +1,6 @@
 import HomePage from './views/HomePage'
 import { CodePage } from './views/CodePage';
+import SignupPage from './views/SignUp';
 
 import {
   createBrowserRouter,
@@ -19,10 +20,14 @@ const router = createBrowserRouter([
     element: <CodePage/>,
   },
 
-
   {
     path: "/procede",
     element: <ProcedeTestPage/>,
+  },
+
+  {
+    path: "/signup", // Add the signup path
+    element: <SignupPage />,
   },
   // put other pages here
 ]);
