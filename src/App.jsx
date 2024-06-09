@@ -5,6 +5,8 @@ import {
   createBrowserRouter,
   RouterProvider
 } from 'react-router-dom';
+import { ProcedeTestPage } from './views/ProcedeTestPage';
+
 
 const router = createBrowserRouter([
   {
@@ -15,6 +17,12 @@ const router = createBrowserRouter([
   {
     path: "/code",
     element: <CodePage/>,
+  },
+
+
+  {
+    path: "/procede",
+    element: <ProcedeTestPage/>,
   },
   // put other pages here
 ]);

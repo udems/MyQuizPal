@@ -2,7 +2,7 @@
 import Header from '../component/Header';
 import FaqSection from '../views/FaqSection';
 import { faqs } from '../data';
-import Footer from '../component/Footer'
+import Footer from '../component/Footer';
 function HomePage() {
 
     return(
@@ -18,6 +18,7 @@ function HomePage() {
             <div className="img1">
                 <img src="src\assets\istockphoto-1490709077-170667a 1.png" alt="" />
             </div>
+            
             
         </div>
         <div className="empower-flex" id='teachers'>

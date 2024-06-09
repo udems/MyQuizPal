@@ -6,7 +6,6 @@
 }
 .html {
   font-size: 62.5%;
-  scroll-behaviour: smooth;
 }
 /*homepage*/
 .interact-flex {
@@ -160,7 +159,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
+  padding: 5px 60px;
   background-color: #673ab7;
   border-bottom: 1px solid #e0e0e0;
   z-index: 1000; /*ensures it stays above other content */
@@ -177,9 +176,10 @@
 .header-nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 30px;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .header-nav-links li {
@@ -198,8 +198,23 @@
 
 .header-nav-buttons {
   display: flex;
-  gap: 20px;
+  gap: 30px;
 }
+.header-logo-links{
+  display: flex;
+  gap: 50px;
+}
+ /* logo styling  */
+.logo-container {
+  flex-shrink: 0; /* Prevents the logo from shrinking */
+}
+
+.logo {
+  max-width: 100px; /* Set a maximum width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
 
 /* Faq.css 
 
@@ -294,4 +309,12 @@ Others are in FaqSection.css in the FaqCss folder */
   background-color: #45277b;
   color: white;
   font-size: 1.3rem;
+}
+
+/* procede test page styling  */
+
+.box-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
