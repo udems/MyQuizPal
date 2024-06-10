@@ -1,6 +1,10 @@
 import HomePage from './views/HomePage'
 import { CodePage } from './views/CodePage';
 import SignupPage from './views/SignUp';
+import CodeVerificationPage from './views/CodeVerificationPage';
+import SignInPage from './views/SignIn'
+import ForgotPasswordPage from './views/ForgotPassword';
+
 
 import {
   createBrowserRouter,
@@ -29,6 +33,21 @@ const router = createBrowserRouter([
     path: "/signup", // Add the signup path
     element: <SignupPage />,
   },
+
+    {
+      path: "/code-verification",
+      element: <CodeVerificationPage/>
+    },
+
+  {
+  path: "/signin", // Add the signup path
+  element: <SignInPage />,
+},
+
+{ 
+  path: "/forgot-password", 
+  element: <ForgotPasswordPage /> 
+},
   // put other pages here
 ]);
 

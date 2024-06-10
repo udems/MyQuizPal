@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaEye, FaEyeSlash, FaTimes } from 'react-icons/fa';
+import { useNavigate, Link } from 'react-router-dom';
+import { FaEye, FaEyeSlash, FaTimes, FaGoogle } from 'react-icons/fa';
 
 
 const SignupPage = () => {
@@ -13,6 +14,16 @@ const SignupPage = () => {
   const toggleConfirmPasswordVisibility = () => {
     setShowConfirmPassword(!showConfirmPassword);
   };
+  const navigate = useNavigate();
+  const handleSignUp = (event) => {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Perform any form validation or submission logic here...
+
+    // Redirect to the signin after form submission
+    navigate('/code-verification'); // Redirect to signin route
+  };
+
   const handleCancel = () => {
     document.getElementById('signup-form').reset();
   };
@@ -23,23 +34,24 @@ const SignupPage = () => {
     backgroundColor: '#fff',
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
     margin: '0 auto',
-    marginTop: '5rem',
-    height: '80vh',
+    marginTop: '1rem',
+    height: '95vh',
     alignItems: 'center',
     justifyContent: 'center',
   };
 
   const cancelIconContainerStyle = {
     position: 'absolute',
-    top: '100px',
+    top: '60px',
     right: '400px',
     borderRadius: '50%',
     border: '1px solid #000', // Circle background color
-    width: '13px',
-    height: '13px',
+    width: '20px',
+    height: '20px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    cursor: 'pointer',
   };
 
   const cancelIconStyle = {
@@ -115,10 +127,50 @@ const SignupPage = () => {
     cursor: 'pointer',
   };
 
-  const googleLogoStyle = {
-    marginTop: '20px',
+  const googleButtonStyle = {
+    width: '80%',
+    padding: '10px',
+    marginLeft: '3rem',
+    backgroundColor: '#fff',
+    color: '#673ab7',
+    fontSize: '1.1rem',
+    fontWeight: 'Bold',
+    border: '1px solid #673ab7',
+    borderRadius: '5px',
+    cursor: 'pointer',
     display: 'flex',
+    alignItems: 'center',
     justifyContent: 'center',
+  };
+
+  const googleLogoStyle = {
+    marginRight: '10px',
+    color: '#4285F4',
+    fontSize: '1.4rem',
+  };
+
+  const signInLinkStyle = {
+    marginTop: '1rem',
+    textAlign: 'center',
+  };
+
+  const orSeparatorStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    margin: '1.5rem 0',
+    fontWeight: 'bold',
+  };
+
+  const lineStyle = {
+    flex: 1,
+    height: '1px',
+    backgroundColor: '#ccc',
+  };
+
+  const orTextStyle = {
+    margin: '0 1rem',
+    fontSize: '1rem',
+    color: '#888',
   };
 
   const headerStyle = {
@@ -150,7 +202,7 @@ const SignupPage = () => {
       <div style={signupSectionStyle}>
         <h2 style={headerStyle}>Welcome to MyQuizPal</h2>
         <p style={sentenceStyle}>Create an account to get started</p>
-        <form id='signup-form' action="/signup" method="post">
+        <form id='signup-form' onSubmit={handleSignUp} action="/signup" method="post">
           <div style={{ ...formGroupStyle, display: 'flex' }}>
             <div style={{ flex: '1', ...firstNameStyle }}>
               <label htmlFor="firstName" style={labelStyle}>First Name</label>
@@ -183,8 +235,17 @@ const SignupPage = () => {
             <button type="submit" style={buttonStyle}>Sign Up</button>
           </div>
         </form>
-        <div style={googleLogoStyle}>
-          <img src="google-logo.png" alt="Sign up with Google" />
+        <div style={orSeparatorStyle}>
+          <div style={lineStyle}></div>
+          <span style={orTextStyle}>OR</span>
+          <div style={lineStyle}></div>
+        </div>
+        <button style={googleButtonStyle} onClick={() => { /* Handle Google sign-in */ }}>
+          <FaGoogle style={googleLogoStyle} />
+          Sign Up with Google
+        </button>
+        <div style={signInLinkStyle}>
+          <p>Already have an account? <Link to="/signin" style={{ textDecoration: 'none', color: '#673ab7', fontWeight: 'Bold', }}>Sign In</Link></p>
         </div>
       </div>
     </div>
