@@ -1,10 +1,12 @@
 import Footer from '../component/Footer';
 import Button from '../component/button';
+import EnterCode from '../component/EnterCode-Header';
 
 
 export function ProcedeTestPage() {
     return(
         <>
+        <EnterCode/>
         <div className='procede-test'>
            <h1>Our quiz platform is here to guide you through an engaging and <br/> interactive journey!</h1>
            <div className='box-container'>
