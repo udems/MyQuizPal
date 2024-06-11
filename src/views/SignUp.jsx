@@ -1,11 +1,59 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { FaEye, FaEyeSlash, FaTimes, FaGoogle } from 'react-icons/fa';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+
 
 
 const SignupPage = () => {
+
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const validateForm = () => {
+    const { firstName, lastName, email, password, confirmPassword } = formData;
+    if (!firstName || !lastName || !email || !password || !confirmPassword) {
+      Swal.fire('Error', 'All fields are required', 'error');
+      return false;
+    }
+    if (password !== confirmPassword) {
+      Swal.fire('Error', 'Passwords do not match', 'error');
+      return false;
+    }
+    return true;
+  };
+
+  const handleSignUp = async (e) => {
+    e.preventDefault();  // Prevent the default form submission behavior
+
+     // Perform any form validation or submission logic here...
+
+    // Redirect to the signin after form submission
+    if (validateForm()) {
+      try {
+        const response = await axios.post('/signup', formData);
+        Swal.fire('Success', 'Account created successfully', 'success');
+        navigate('/code-verification'); // Redirect to signin route
+      } catch (error) {
+        Swal.fire('Error', 'An error occurred while creating your account', 'error');
+      }
+    }
+  };
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -15,14 +63,6 @@ const SignupPage = () => {
     setShowConfirmPassword(!showConfirmPassword);
   };
   const navigate = useNavigate();
-  const handleSignUp = (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
-
-    // Perform any form validation or submission logic here...
-
-    // Redirect to the signin after form submission
-    navigate('/code-verification'); // Redirect to signin route
-  };
 
   const handleCancel = () => {
     document.getElementById('signup-form').reset();
@@ -219,14 +259,14 @@ const SignupPage = () => {
           </div>
           <div style={formGroupStyle}>
             <label htmlFor="password" style={labelStyle}>Password</label>
-            <input type={showPassword ? 'text' : 'password'} id="password" name="password" placeholder='Enter your password' required style={inputStyle} />
+            <input type={showPassword ? 'text' : 'password'} id="password" name="password" placeholder='Enter your password' required style={inputStyle} onChange={handleChange}/>
             <div style={eyeIconStyle} onClick={togglePasswordVisibility}>
               {showPassword ? <FaEyeSlash /> : <FaEye />}
             </div>
           </div>
           <div style={formGroupStyle}>
             <label htmlFor="confirmPassword" style={labelStyle}>Confirm Password</label>
-            <input type={showConfirmPassword ? 'text' : 'password'} id="confirmPassword" name="confirmPassword" placeholder='Confirm your password'required style={inputStyle} />
+            <input type={showConfirmPassword ? 'text' : 'password'} id="confirmPassword" name="confirmPassword" placeholder='Confirm your password'required style={inputStyle} onChange={handleChange}/>
             <div style={eyeIconStyle} onClick={toggleConfirmPasswordVisibility}>
               {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
             </div>

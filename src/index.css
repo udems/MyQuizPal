@@ -370,8 +370,33 @@ Others are in FaqSection.css in the FaqCss folder */
 }
 /* procede test page styling  */
 
+.procede-test{
+  padding: 60px 80px;
+  color: #2B184D;
+ 
+}
 .box-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding:50px 0;
+}
+.box{
+  height: 233px;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align:center;
+}
+.box-image{
+  height: 50px;
+}
+
+.box p , .box h3 {
+  text-align: left;
+  padding-top: 15px;
+}
+.box h3{
+  font-size: 24px;
 }

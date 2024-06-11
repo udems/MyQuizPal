@@ -18,7 +18,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <HomePage/>,
   },
-//Changed the path to code so as to view the new page.
   {
     path: "/code",
     element: <CodePage/>,
