@@ -4,7 +4,7 @@ import SignupPage from './views/SignUp';
 import CodeVerificationPage from './views/CodeVerificationPage';
 import SignInPage from './views/SignIn'
 import ForgotPasswordPage from './views/ForgotPassword';
-
+import HomePage1 from './component/HomePage-1';
 
 import {
   createBrowserRouter,
@@ -47,6 +47,13 @@ const router = createBrowserRouter([
   path: "/forgot-password", 
   element: <ForgotPasswordPage /> 
 },
+
+{
+  path:"/HomePage-1",
+  element:<HomePage1/>
+
+},
+
   // put other pages here
 ]);
 
