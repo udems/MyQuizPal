@@ -1,9 +1,11 @@
 import Footer from '../component/Footer'
 import Button from '../component/button';
+import EnterCode from '../component/EnterCode-Header';
 
 export function CodePage() {
     return(
         <>
+        <EnterCode/>
         <div className='enter-code'>
             <h1>MYQUIZPAL</h1>
             {/* <label htmlFor="code">Enter Your Code</label> */}

@@ -375,3 +375,57 @@ Others are in FaqSection.css in the FaqCss folder */
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+/* Authenticated header styles */
+.header-enter-code{
+  background-color:#4e288f;
+  border-bottom: 1px solid white;
+}
+
+.btn-enter-code{
+  background-color: rgb(237, 231, 246);
+  color: #673ab7;
+}
+
+.img-ul{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quiz-img{
+  width: 5rem;
+  filter: grayscale(100%) brightness(1000%);
+  margin-right: 50px;
+}
+
+.header-others{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  margin-right: 2%;
+}
+
+.btn-assessment{
+  background-color: transparent;
+  border: 1px solid white;
+  margin-right: 20px;
+  color: white;
+  padding: 12px 46px;
+}
+
+.word-container{
+  margin-right: 10px;
+}
+
+.name-word{
+  text-decoration: underline;
+}
+
+.profile-img{
+  border-radius: 50px;
+  object-fit: cover;
+  width: 3rem;
+  height: 3rem;
+}
