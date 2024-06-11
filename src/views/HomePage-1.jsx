@@ -1,7 +1,7 @@
 
 import AuthentcatedHeader from '../component/Authentcated-Header';
 
-import FaqSection from '../views/FaqSection';
+import FaqSection from './FaqSection';
 import { faqs } from '../data';
 import Footer from '../component/Footer'
 import profileImg from '../assets/pexels-olly-774909.jpg';
