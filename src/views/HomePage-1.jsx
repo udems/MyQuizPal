@@ -41,9 +41,8 @@ function HomePage1() {
         <div className="learning-flex" id="students">
             <div className="learning">
                 <h2>Learning Made Fun</h2>
-                <p>Experience a new way of learning with MyQuizPal. Interactive quizzes , instant feedback, and gamified element like badges and leaderboards make studying exciting and rewarding for students.
+                <p>Experience a new way of learning with MyQuizPal. Interactive quizzes , instant feedback, and gamified element like badges and leaderboards make studying exciting and rewarding for students.</p>
                 <div className='learning-button'><Button text="Take Assessment" onClick={() => { window.location.href = '/code'; }} /></div>
-                </p>
             </div>
             <div className="img3">
                 <img src="src\assets\unsplash_cbL3UVrDozk.png" alt="" />
@@ -53,7 +52,7 @@ function HomePage1() {
             <h1>KEY FEATURES</h1>
         </div>
         <div className="engage-flex">
-        <div className="img4">
+            <div className="img4">
                 <img src="src\assets\istockphoto-1490656132-170667a 1.png" alt="" />
             </div>
             <div className="engage">
@@ -74,14 +73,14 @@ function HomePage1() {
             </div>
         </div>
         <div className="progress-flex">
-        <div className="img6">
+            <div className="img6">
                 <img src="src\assets\image 2.png" alt="" />
             </div>
             <div className="progress">
                 <h2>Progress Tracking</h2>
-                <p>Comprehensive  reports and intuitive dashboards provide clear insights into student performance and progress. 
-                    <div className="soon">Coming Soon!</div>
-                </p>
+                <div>Comprehensive  reports and intuitive dashboards provide clear insights into student performance and progress. 
+                    <p className="soon">Coming Soon!</p>
+                </div>
             </div>
         </div>
         <FaqSection faqs={faqs} />
