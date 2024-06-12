@@ -67,7 +67,6 @@ const router = createBrowserRouter([
 },
 
 {
-<<<<<<< HEAD
   path: "/reset-password",
   element: <ResetPasswordPage/>,
 },
@@ -76,13 +75,11 @@ const router = createBrowserRouter([
   path: "/verification-complete", // Add the new route
   element: <VerificationCompletePage />,
 },
-=======
+  {
   path:"/HomePage-1",
-  element:<HomePage1/>
-
+  element: <HomePage1 />,
 },
 
->>>>>>> 31caddb20921757217aec85c06da77266967db99
   // put other pages here
 ]);
 

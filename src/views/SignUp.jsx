@@ -88,17 +88,15 @@ const SignupPage = () => {
     setShowConfirmPassword(!showConfirmPassword);
   };
   const navigate = useNavigate();
-<<<<<<< HEAD
-  const handleSignUp = (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
 
-    // Perform any form validation or submission logic here...
+  // const handleSignUp = (event) => {
+  //   event.preventDefault(); // Prevent the default form submission behavior
 
-    // Redirect to the signin after form submission
-    navigate('/signin'); // Redirect to signin route
-  };
-=======
->>>>>>> 31caddb20921757217aec85c06da77266967db99
+  //   // Perform any form validation or submission logic here...
+
+  //   // Redirect to the signin after form submission
+  //   navigate('/signin'); // Redirect to signin route
+  // };
 
   const handleCancel = () => {
     document.getElementById('signup-form').reset();
