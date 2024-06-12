@@ -76,7 +76,7 @@ const router = createBrowserRouter([
   element: <VerificationCompletePage />,
 },
   {
-  path:"/HomePage-1",
+  path:"/welcome",
   element: <HomePage1 />,
 },
 

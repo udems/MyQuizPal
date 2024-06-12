@@ -1,6 +1,4 @@
-
 import AuthentcatedHeader from '../component/Authentcated-Header';
-
 import FaqSection from './FaqSection';
 import { faqs } from '../data';
 import Footer from '../component/Footer';
