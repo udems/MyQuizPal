@@ -7,26 +7,31 @@
 .html {
   font-size: 62.5%;
 }
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  min-height: 100%;
+}
 /*homepage*/
 .interact-flex {
   display: flex;
   margin-top: 10rem;
-  margin-left: 15rem;
-  column-gap: 6rem;
+  margin-left: 7.5rem;
+  column-gap: 15.5rem;
   font-size: 1.3rem;
 }
 .interact {
-  width: 35vw;
+  width: 32vw;
   padding-top: 5rem;
-  line-height: 1.3;
+  line-height: 1.5;
   color: #2b184d;
 }
 .interact h2 {
   line-height: 1;
-  font-size: 3.5rem;
+  font-size: 3rem;
+  margin-bottom: 2rem;
 }
 .img1 img {
-  width: 25rem;
+  width: 33rem;
 }
 .interact-button-1,
 .interact-button-2 {
@@ -38,6 +43,9 @@
 .interact-button-1 button {
   background-color: #673ab7;
   color: #fff;
+  height: 3.5rem;
+  width: 12rem;
+  font-size: 1.3rem;
 }
 .interact-button-1 button:hover {
   background-color: #673ab7;
@@ -48,6 +56,9 @@
 .interact-button-2 button {
   background-color: #ede7f6;
   color: #45277b;
+  height: 3.5rem;
+  width: 12rem;
+  font-size: 1.3rem;
 }
 .interact-button-2 button:hover {
   color: #45277b;
@@ -56,29 +67,34 @@
 .empower-flex {
   display: flex;
   margin-top: 10rem;
-  margin-left: 15rem;
-  column-gap: 6rem;
+  margin-left: 7.5rem;
+  column-gap: 10.5rem;
+  font-size: 1.3rem;
 }
 .empower {
-  width: 39vw;
+  width: 33vw;
   padding-top: 5rem;
-  line-height: 1.3;
+  line-height: 1.5;
   color: #2b184d;
 }
 .empower h2 {
+  width: 39vw;
   line-height: 1;
-  font-size: 3.5rem;
+  font-size: 3rem;
+  margin-bottom: 2rem;
 }
 .img2 img {
-  width: 25rem;
+  width: 33rem;
 }
 .empower-button {
   margin-top: 3rem;
 }
 .empower-button button {
-  width: 10rem;
   background-color: #673ab7;
   color: #fff;
+  height: 3.5rem;
+  width: 12rem;
+  font-size: 1.3rem;
 }
 .empower-button button:hover {
   background-color: #673ab7;
@@ -86,53 +102,61 @@
 .learning-flex {
   display: flex;
   margin-top: 10rem;
-  margin-left: 15rem;
-  column-gap: 6rem;
+  margin-left: 7.5rem;
+  column-gap: 15.5rem;
+  font-size: 1.3rem;
 }
 .learning {
-  width: 39vw;
+  width: 33vw;
   padding-top: 5rem;
   line-height: 1.3;
   color: #2b184d;
 }
 .learning h2 {
+  width: 39vw;
   line-height: 1;
-  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  font-size: 3rem;
 }
 .img3 img {
-  width: 25rem;
+  width: 33rem;
 }
 .learning-button {
   margin-top: 3rem;
 }
 .learning-button button {
+  height: 3.5rem;
   width: 13rem;
   background-color: #673ab7;
   color: #fff;
+  font-size: 1.3rem;
 }
 .learning-button button:hover {
   background-color: #673ab7;
 }
 .key {
-  padding-top: 10rem;
-  margin-left: 15rem;
+  padding-top: 8rem;
+  margin-left: 7.5rem;
   color: #2b184d;
+  font-size: 1.5rem;
 }
 .engage-flex {
   display: flex;
   margin-top: 10rem;
-  margin-left: 15rem;
-  column-gap: 6rem;
+  margin-left: 7.5rem;
+  column-gap: 10.5rem;
+  font-size: 1.3rem;
 }
 .engage {
-  width: 39vw;
+  width: 32vw;
   padding-top: 5rem;
-  line-height: 1.3;
+  line-height: 1.5;
   color: #2b184d;
 }
 .engage h2 {
   line-height: 1;
-  font-size: 3.5rem;
+  font-size: 3rem;
+  margin-bottom: 2rem;
 }
 .engage-button {
   margin-top: 3rem;
@@ -142,42 +166,49 @@
   background-color: #fff;
   border: 1px solid #673ab7;
   color: #673ab7;
+  height: 3.5rem;
+  width: 12rem;
+  font-size: 1.3rem;
 }
 .engage-button button:hover {
   background-color: #673ab7;
 }
 .img4 img {
-  width: 25rem;
+  width: 33rem;
 }
 .real-flex {
   display: flex;
   margin-top: 10rem;
-  margin-left: 15rem;
-  column-gap: 3rem;
+  margin-left: 7.5rem;
+  column-gap: 15.5rem;
+  font-size: 1.3rem;
 }
 .real {
-  width: 43vw;
+  width: 32vw;
   padding-top: 5rem;
-  line-height: 1.3;
+  line-height: 1.5;
   color: #2b184d;
 }
 .real h2 {
+  width: 39vw;
   line-height: 1;
   font-size: 3rem;
+  margin-bottom: 2rem;
 }
 .img5 img {
-  width: 25rem;
+  width: 33rem;
 }
 .progress-flex {
   display: flex;
   margin-top: 10rem;
-  margin-left: 15rem;
-  column-gap: 3rem;
+  margin-left: 7.5rem;
+  column-gap: 12.5rem;
+  font-size: 1.3rem;
 }
 .progress {
-  width: 43vw;
+  width: 33vw;
   padding-top: 5rem;
-  line-height: 1.3;
+  line-height: 1.5;
   font-size: 1.2rem;
   color: #2b184d;
 }
@@ -187,11 +218,12 @@
   padding-bottom: 2rem;
 }
 .soon {
-  padding-top: 4rem;
+  padding-top: 6rem;
   font-size: 3rem;
+  font-weight: bold;
 }
 .img6 img {
-  width: 25rem;
+  width: 33rem;
 }
 
 /* button styles*/
@@ -217,10 +249,11 @@
   top: 0;
   left: 0;
   width: 100%;
+  font-size: 1.2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 60px;
+  padding: 5px 100px;
   background-color: #673ab7;
   border-bottom: 1px solid #e0e0e0;
   z-index: 1000; /*ensures it stays above other content */
@@ -253,8 +286,8 @@
 }
 
 .header-nav-links a:hover {
-  text-decoration: underline;
-  color: #2b184d;
+  text-decoration: none;
+  color: #fff;
 }
 
 .header-nav-buttons {
@@ -273,6 +306,7 @@
 .logo {
   max-width: 100px; /* Set a maximum width */
   height: auto; /* Maintain aspect ratio */
+  filter: grayscale(100%) brightness(1000%);
 }
 
 /* Faq.css 
@@ -370,60 +404,58 @@ Others are in FaqSection.css in the FaqCss folder */
 }
 /* procede test page styling  */
 
-.procede-test{
+.procede-test {
   padding: 60px 80px;
-  color: #2B184D;
- 
+  color: #2b184d;
 }
 .box-container {
-
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  padding:50px 0;
+  padding: 50px 0;
 }
-.box{
+.box {
   height: 233px;
   border-radius: 15px;
   padding: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align:center;
+  text-align: center;
 }
-.box-image{
+.box-image {
   height: 50px;
 }
 
-.box p , .box h3 {
+.box p,
+.box h3 {
   text-align: left;
   padding-top: 15px;
 }
 
 /* Authenticated header styles */
-.header-enter-code{
-  background-color:#4e288f;
+.header-enter-code {
+  background-color: #4e288f;
   border-bottom: 1px solid white;
 }
 
-.btn-enter-code{
+.btn-enter-code {
   background-color: rgb(237, 231, 246);
   color: #673ab7;
   width: 10rem;
 }
 
-
-.img-ul{
+.img-ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.quiz-img{
+.quiz-img {
   width: 5rem;
   filter: grayscale(100%) brightness(1000%);
   margin-right: 50px;
 }
 
-.header-others{
+.header-others {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -431,7 +463,7 @@ Others are in FaqSection.css in the FaqCss folder */
   margin-right: 2%;
 }
 
-.btn-assessment{
+.btn-assessment {
   background-color: transparent;
   border: 1px solid white;
   margin-right: 20px;
@@ -439,15 +471,15 @@ Others are in FaqSection.css in the FaqCss folder */
   padding: 12px 46px;
 }
 
-.word-container{
+.word-container {
   margin-right: 10px;
 }
 
-.name-word{
+.name-word {
   text-decoration: underline;
 }
 
-.profile-img{
+.profile-img {
   border-radius: 50px;
   object-fit: cover;
   width: 3rem;

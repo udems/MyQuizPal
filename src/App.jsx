@@ -1,3 +1,4 @@
+import '../src/index.css'
 import HomePage from './views/HomePage';
 import { CodePage } from './views/CodePage';
 import SignupPage from './views/SignUp';
