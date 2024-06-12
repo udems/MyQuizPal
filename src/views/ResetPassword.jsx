@@ -1,19 +1,19 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
 
-const ForgotPasswordPage = () => {
+const ResetPasswordPage = () => {
   const navigate = useNavigate();
 
   const handleCancel = () => {
-    document.getElementById('forgot-password-form').reset(); // Clear the form inputs
+    navigate('/signin'); // Redirect to sign-in page
   };
 
-  const handleForgotPassword = (event) => {
+  const handleResetPassword = (event) => {
     event.preventDefault();
-    // Add your forgot password logic here
-    alert('Password reset token has been sent to your email');
-    navigate('/code-verification'); // Redirect to sign-in page after submitting
+    // Add your password reset logic here
+    alert('Password has been reset successfully');
+    navigate('/verification-complete'); // Redirect to sign-in page after submitting
   };
 
   const containerStyle = {
@@ -42,7 +42,7 @@ const ForgotPasswordPage = () => {
     height: '15vh',
   };
 
-  const forgotPasswordSectionStyle = {
+  const resetPasswordSectionStyle = {
     flex: 1,
     padding: '2rem',
     marginTop: '3rem',
@@ -52,11 +52,6 @@ const ForgotPasswordPage = () => {
   const headerStyle = {
     fontSize: '2rem',
     marginBottom: '1rem',
-  };
-
-  const sentenceStyle = {
-    fontSize: '1rem',
-    marginBottom: '2rem',
   };
 
   const formGroupStyle = {
@@ -73,6 +68,7 @@ const ForgotPasswordPage = () => {
     padding: '10px',
     border: '1px solid #ccc',
     borderRadius: '5px',
+    outline: '0',
   };
 
   const buttonStyle = {
@@ -109,27 +105,31 @@ const ForgotPasswordPage = () => {
       <div style={logoSectionStyle}>
         <img src="src/assets/Logo.png" alt="Company Logo" style={logoStyle} />
       </div>
-      <div style={forgotPasswordSectionStyle}>
+      <div style={resetPasswordSectionStyle}>
         <div style={cancelIconContainerStyle} onClick={handleCancel}>
           <FaTimes style={cancelIconStyle} />
         </div>
-        <h2 style={headerStyle}>Forgot Password</h2>
-        <p style={sentenceStyle}>Please enter your email address to receive a verification code</p>
-        <form id="forgot-password-form" onSubmit={handleForgotPassword}>
+        <h2 style={headerStyle}>Reset Password</h2>
+        <form id="reset-password-form" onSubmit={handleResetPassword}>
           <div style={formGroupStyle}>
-            <label htmlFor="email" style={labelStyle}>Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email address" required style={inputStyle} />
+            <label htmlFor="oldPassword" style={labelStyle}>Old Password</label>
+            <input type="password" id="oldPassword" name="oldPassword" placeholder="Enter your old password" required style={inputStyle} />
+          </div>
+          <div style={formGroupStyle}>
+            <label htmlFor="newPassword" style={labelStyle}>New Password</label>
+            <input type="password" id="newPassword" name="newPassword" placeholder="Enter your new password" required style={inputStyle} />
+          </div>
+          <div style={formGroupStyle}>
+            <label htmlFor="repeatPassword" style={labelStyle}>Confirm New Password</label>
+            <input type="password" id="repeatPassword" name="repeatPassword" placeholder="Repeat your new password" required style={inputStyle} />
           </div>
           <div style={formGroupStyle}>
             <button type="submit" style={buttonStyle}>Reset Password</button>
           </div>
         </form>
-        <div style={{ marginTop: '2rem', textAlign: 'center' }}>
-          <p>Remembered your password? <Link to="/signin" style={{ textDecoration: 'none', color: '#673ab7', fontWeight: 'bold', }}>Sign In</Link></p>
-        </div>
       </div>
     </div>
   );
 };
 
-export default ForgotPasswordPage;
+export default ResetPasswordPage;

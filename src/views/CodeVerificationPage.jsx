@@ -25,7 +25,7 @@ const CodeVerificationPage = () => {
     // Perform verification logic (e.g., validate against the code sent via email)
 
     // Redirect to the appropriate page after successful verification
-    navigate('/signin'); // Redirect to dashboard after successful verification
+    navigate('/reset-password'); // Redirect to dashboard after successful verification
   };
 
   const handleResendCode = () => {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { FaEye, FaEyeSlash, FaTimes, FaGoogle } from 'react-icons/fa';
+import { FaEye, FaEyeSlash, FaTimes,} from 'react-icons/fa';
 
 
 const SignupPage = () => {
@@ -21,7 +21,7 @@ const SignupPage = () => {
     // Perform any form validation or submission logic here...
 
     // Redirect to the signin after form submission
-    navigate('/code-verification'); // Redirect to signin route
+    navigate('/signin'); // Redirect to signin route
   };
 
   const handleCancel = () => {
@@ -60,7 +60,7 @@ const SignupPage = () => {
   };
 
   const logoSectionStyle = {
-    flex: 0.5,
+    flex: 0.6,
     padding: '20px',
     display: 'flex',
     justifyContent: 'center',
@@ -145,7 +145,6 @@ const SignupPage = () => {
 
   const googleLogoStyle = {
     marginRight: '10px',
-    color: '#4285F4',
     fontSize: '1.4rem',
   };
 
@@ -158,13 +157,15 @@ const SignupPage = () => {
     display: 'flex',
     alignItems: 'center',
     margin: '1.5rem 0',
+    marginLeft: '5rem',
+    width: '20rem',
     fontWeight: 'bold',
   };
 
   const lineStyle = {
     flex: 1,
     height: '1px',
-    backgroundColor: '#ccc',
+    backgroundColor: '#673ab7',
   };
 
   const orTextStyle = {
@@ -241,8 +242,8 @@ const SignupPage = () => {
           <div style={lineStyle}></div>
         </div>
         <button style={googleButtonStyle} onClick={() => { /* Handle Google sign-in */ }}>
-          <FaGoogle style={googleLogoStyle} />
-          Sign Up with Google
+          <img src="src\assets\google_symbol.svg.png" alt="Google Logo" style={googleLogoStyle} />
+          Sign in with Google
         </button>
         <div style={signInLinkStyle}>
           <p>Already have an account? <Link to="/signin" style={{ textDecoration: 'none', color: '#673ab7', fontWeight: 'Bold', }}>Sign In</Link></p>

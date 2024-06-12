@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
-import { FaTimes, FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
+import { FaTimes, FaEye, FaEyeSlash, } from 'react-icons/fa';
 
 
 const SignInPage = () => {
@@ -121,7 +121,6 @@ const SignInPage = () => {
 
   const googleLogoStyle = {
     marginRight: '10px',
-    color: '#4285F4',
     fontSize: '1.4rem',
   };
 
@@ -129,12 +128,14 @@ const SignInPage = () => {
     display: 'flex',
     alignItems: 'center',
     margin: '2rem 0',
+    marginLeft: '2rem',
+    width: '23rem',
   };
 
   const lineStyle = {
     flex: 1,
     height: '1px',
-    backgroundColor: '#ccc',
+    backgroundColor: '#673ab7',
   };
 
   const orTextStyle = {
@@ -211,8 +212,8 @@ const SignInPage = () => {
           <div style={lineStyle}></div>
         </div>
         <button style={googleButtonStyle} onClick={() => { /* Handle Google sign-in */ }}>
-          <FaGoogle style={googleLogoStyle} />
-          Sign In with Google
+          <img src="src\assets\google_symbol.svg.png" alt="Google Logo" style={googleLogoStyle} />
+          Sign in with Google
         </button>
         <div style={signupLinkStyle}>
           <p>Don&apos;t have an account? <Link to="/signup" style={{ textDecoration: 'none', color: '#673ab7', fontWeight: 'Bold', }}>Sign Up</Link></p>
