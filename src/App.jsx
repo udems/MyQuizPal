@@ -4,7 +4,7 @@ import SignupPage from './views/SignUp';
 import CodeVerificationPage from './views/CodeVerificationPage';
 import SignInPage from './views/SignIn'
 import ForgotPasswordPage from './views/ForgotPassword';
-import HomePage1 from './component/HomePage-1';
+import HomePage1 from './views/HomePage-1';
 
 import {
   createBrowserRouter,
