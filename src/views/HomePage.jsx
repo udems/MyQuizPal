@@ -33,7 +33,7 @@ function HomePage() {
                 <h2>Empower Your Teaching </h2>
                 <p>Create  quizzes that fit your specific  teaching needs. With MyQuizPal , teachers can easily design and customize quizzes to align with their curriculum, ensuring relevance and maximizing student engagement.
                 </p>
-                <div className='empower-button'><Button text="Create Quiz" onClick={() => { window.location.href = '/create'; }} /></div>
+                <div className='empower-button'><Button text="Create Quiz" onClick={() => { window.location.href = '/signup'; }} /></div>
             </div>
         </div>
         <div className="learning-flex" id="students">
@@ -41,7 +41,7 @@ function HomePage() {
                 <h2>Learning Made Fun</h2>
                 <p>Experience a new way of learning with MyQuizPal. Interactive quizzes , instant feedback, and gamified element like badges and leaderboards make studying exciting and rewarding for students.
                 </p>
-                <div className='learning-button'><Button text="Take Assessment" onClick={() => { window.location.href = '/assessment'; }} /></div>
+                <div className='learning-button'><Button text="Take Assessment" onClick={() => { window.location.href = '/signup'; }} /></div>
             </div>
             <div className="img3">
                 <img src="src\assets\unsplash_cbL3UVrDozk.png" alt="" />
@@ -58,7 +58,7 @@ function HomePage() {
                 <h2>Interactive Quizzes</h2>
                 <p>Our quizzes are designed  to keep students engaged and motivated, make learning a fun and interactive experience.
                 </p>
-                <div className='engage-button'><Button text="Enter Code" onClick={() => { window.location.href = '/code'; }} /></div>
+                <div className='engage-button'><Button text="Enter Code" onClick={() => { window.location.href = '/signin'; }} /></div>
             </div>
         </div>
         <div className="real-flex">
