@@ -1,24 +1,81 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 import { FaTimes, FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
-
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const SignInPage = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const validateForm = () => {
+    const { email, password} = formData;
+    if (!email || !password) {
+      Swal.fire('Error', 'All fields are required', 'error');
+      return false;
+    }
+    return true;
+  };
+
+
+
+  const handleSignIn = async (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      setLoading(true); // Set loading state to true
+      let data = JSON.stringify(formData);
+      let config = {
+        method: 'POST',
+        url: 'https://myquizpal.onrender.com/api/login', // Ensure this URL is correct
+        headers: { 
+          'Content-Type': 'application/json'
+        },
+        data: data
+      };
+
+      try {
+        const response = await axios.request(config);
+        const responseData = response.data;
+        if (responseData && responseData.data.studentId) {
+          Swal.fire('Success', 'Login successfully', 'success').then(() => {
+            navigate('/signin');
+          });
+        } else {
+          Swal.fire('Error', 'An error occurred while logging in', 'error');
+        }
+      } catch (error) {
+        console.log(error)
+        if (error.response) {
+          if (error.response.status === 409) {
+            Swal.fire('Error', 'credentials invalid', 'error');
+          } else {
+            Swal.fire('Error', `An error occurred: ${error.response.data.data.error.title}`, 'error');
+          }
+        } else {
+          Swal.fire('Error', 'An unknown error occurred', 'error');
+        }
+      } finally {
+        setLoading(false); // Set loading state to false after request completes
+      }
+    }
+    navigate('/'); // Redirect to homepage route
+  };
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
-  };
-
-  const handleSignIn = (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
-
-    // Perform any form validation or submission logic here...
-
-    // Redirect to the homepage after form submission
-    navigate('/'); // Redirect to homepage route
   };
 
   const handleCancel = () => {
@@ -186,15 +243,15 @@ const SignInPage = () => {
         </div>
         <h2 style={headerStyle}>Welcome to MyQuizPal</h2>
         <p style={sentenceStyle}>Good to have you back!</p>
-        <form id="signin-form" onSubmit={handleSignIn}>
-          <div style={formGroupStyle}>
+        <form id="signin-form" onSubmit={handleSignIn} action="/signin" method="post">
+         <div style={formGroupStyle}>
             <label htmlFor="email" style={labelStyle}>Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email address" required style={inputStyle} />
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required style={inputStyle} onChange={handleChange} />
           </div>
           <div style={formGroupStyle} className="password-input">
             <label htmlFor="password" style={labelStyle}>Password</label>
             <div style={{ position: 'relative' }}>
-              <input type={showPassword ? 'text' : 'password'} id="password" name="password" placeholder="Enter your password" required style={inputStyle} />
+              <input type={showPassword ? 'text' : 'password'} id="password" name="password" placeholder="Enter your password" required style={inputStyle}  onChange={handleChange} />
               <div style={eyeIconStyle} onClick={togglePasswordVisibility}>
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </div>
@@ -202,7 +259,9 @@ const SignInPage = () => {
           </div>
           <Link to="/forgot-password" style={forgotPasswordStyle}>Forgot Password?</Link>
           <div style={formGroupStyle}>
-            <button type="submit" style={buttonStyle}>Sign In</button>
+            <button type="submit" style={buttonStyle} disabled={loading}>Sign In
+            {loading ? 'Signing In...' : 'Sign in'}
+            </button>
           </div>
         </form>
         <div style={orSeparatorStyle}>

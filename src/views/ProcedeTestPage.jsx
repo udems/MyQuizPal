@@ -5,6 +5,7 @@ import Button from '../component/button';
 export function ProcedeTestPage() {
     return(
         <>
+    
         <div className='procede-test'>
            <h1>Our quiz platform is here to guide you through an engaging and <br/> interactive journey!</h1>
            <div className='box-container'>
