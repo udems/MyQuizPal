@@ -1,8 +1,8 @@
-import HomePage from './views/HomePage'
+import HomePage from './views/HomePage';
 import { CodePage } from './views/CodePage';
 import SignupPage from './views/SignUp';
 import CodeVerificationPage from './views/CodeVerificationPage';
-import SignInPage from './views/SignIn'
+import SignInPage from './views/SignIn';
 import ForgotPasswordPage from './views/ForgotPassword';
 import HomePage1 from './views/HomePage-1';
 
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
 
     {
       path: "/code-verification",
-      element: <CodeVerificationPage/>
+      element: <CodeVerificationPage/>,
     },
 
   {
@@ -45,12 +45,12 @@ const router = createBrowserRouter([
 
 { 
   path: "/forgot-password", 
-  element: <ForgotPasswordPage /> 
+  element: <ForgotPasswordPage /> ,
 },
 
 {
   path:"/HomePage-1",
-  element:<HomePage1/>
+  element:<HomePage1/>,
 
 },
 

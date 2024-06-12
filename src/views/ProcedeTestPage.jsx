@@ -1,6 +1,6 @@
 import Footer from '../component/Footer';
 import Button from '../component/button';
-import EnterCode from '../component/EnterCode-Header';
+// import EnterCode from '../component/EnterCode-Header';
 
 
 export function ProcedeTestPage() {

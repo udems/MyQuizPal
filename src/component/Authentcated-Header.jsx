@@ -55,6 +55,7 @@ const AuthentcatedHeader =({name,src,alt})=>{
             </nav>
         </header>
     )
+
 };
 AuthentcatedHeader.propTypes = {
     name: PropTypes.string.isRequired,
@@ -66,5 +67,5 @@ AuthentcatedHeader.defaultProps={
     name:'Guest',
     src:'https://via.placeholder.com/50?text=G',
     alt:'Guest'
-  }
+}
 export default AuthentcatedHeader

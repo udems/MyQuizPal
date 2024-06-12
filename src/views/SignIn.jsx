@@ -51,7 +51,7 @@ const SignInPage = () => {
         const responseData = response.data;
         if (responseData && responseData.data.studentId) {
           Swal.fire('Success', 'Login successfully', 'success').then(() => {
-            navigate('/signin');
+            navigate('/HomePage-1');
           });
         } else {
           Swal.fire('Error', 'An error occurred while logging in', 'error');
