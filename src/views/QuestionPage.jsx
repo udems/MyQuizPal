@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { FaStopwatch } from 'react-icons/fa';
-import Footer from '../component/Footer';
+import PropTypes from 'prop-types';
 
-const QuestionPage = () => {
+const QuestionPage = ({ questionData, questionNumber, totalQuestions, handleNextQuestion, handlePreviousQuestion }) => {
   const [seconds, setSeconds] = useState(0);
+  const [selectedOptionIndex, setSelectedOptionIndex] = useState(-1); // State to track selected option index
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -12,6 +13,11 @@ const QuestionPage = () => {
 
     return () => clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    // Reset selectedOptionIndex when question changes
+    setSelectedOptionIndex(-1);
+  }, [questionData]); // Reset when questionData changes
 
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
@@ -23,7 +29,7 @@ const QuestionPage = () => {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    height: '100vh',
+    height: '120vh',
     backgroundColor: '#3a2077',
     paddingTop: '10rem',
   };
@@ -49,7 +55,7 @@ const QuestionPage = () => {
     alignItems: 'center',
     justifyContent: 'center',
     height: '9.375rem',
-    width: '50rem', 
+    width: '50rem',
     color: '#fff',
     fontWeight: '700',
   };
@@ -83,21 +89,20 @@ const QuestionPage = () => {
     fontWeight: '700',
   };
 
-
   const optionBoxStyle = {
     backgroundColor: '#3a2077',
     padding: '1rem',
     borderRadius: '10px',
     border: '1px solid #fff',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    width: '28%', // Adjust the width to be smaller
-    margin: '1.5rem', // Adjust the margin to control the gap
+    width: '28%',
+    margin: '2.7rem',
     position: 'relative',
-    marginLeft: '4rem',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    height: '50px', // Adjust the height as needed
+    height: '50px',
+    cursor: 'pointer',
   };
 
   const optionLineStyleLeft = {
@@ -119,22 +124,32 @@ const QuestionPage = () => {
     top: '50%',
     transform: 'translateY(-50%)',
   };
-  const footerStyle = {
-    position: 'fixed', // Fixed position to ensure it stays at the bottom of the viewport
-    bottom: '0',
-    left: '0',
-    width: '100%',
-    backgroundColor: '#6a0dad', // Footer background color
-    color: '#fff', // Footer text color
-    padding: '1rem',
-    textAlign: 'center',
+
+  const buttonContainerStyle = {
+    display: 'flex',
+    justifyContent: questionNumber === 1 ? 'flex-end' : 'space-between', // Align buttons based on question number
+    width: '80%',
+    height: '7vh',
+  };
+
+  const buttonStyle = {
+    padding: '0.5rem 1rem',
+    backgroundColor: '#673ab7',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    width: '10vw',
+  };
+
+  const handleOptionClick = (optionIndex) => {
+    setSelectedOptionIndex(optionIndex); // Update selected option index
   };
 
   return (
-    <>
     <div style={containerStyle}>
       <div style={headerStyle}>
-        <h2>Question 1/10</h2>
+        <h2>Question {questionNumber}/{totalQuestions}</h2>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <FaStopwatch style={{ marginRight: '0.5rem' }} />
           <span>{formatTime(seconds)}</span>
@@ -143,34 +158,51 @@ const QuestionPage = () => {
       <div style={questionBoxStyle}>
         <div style={questionLineStyleLeft}></div>
         <div style={questionLineStyleRight}></div>
-        <p>What is the capital of France?</p>
+        <p>{questionData.question}</p>
       </div>
       <div style={optionsContainerStyle}>
-        <div style={optionBoxStyle}>
-          <div style={optionLineStyleLeft}></div>
-          <div style={optionLineStyleRight}></div>
-          <p>Paris</p>
-        </div>
-        <div style={optionBoxStyle}>
-          <div style={optionLineStyleLeft}></div>
-          <div style={optionLineStyleRight}></div>
-          <p>London</p>
-        </div>
-        <div style={optionBoxStyle}>
-          <div style={optionLineStyleLeft}></div>
-          <div style={optionLineStyleRight}></div>
-          <p>Berlin</p>
-        </div>
-        <div style={optionBoxStyle}>
-          <div style={optionLineStyleLeft}></div>
-          <div style={optionLineStyleRight}></div>
-          <p>Madrid</p>
-        </div>
+        {questionData.options.map((option, index) => (
+          <div
+            key={index}
+            style={{
+              ...optionBoxStyle,
+              backgroundColor: selectedOptionIndex === index ? '#fff' : optionBoxStyle.backgroundColor,
+              color: selectedOptionIndex === index ? 'purple' : '#fff', // Change text color when selected
+            }}
+            onClick={() => handleOptionClick(index)} // Handle option click
+          >
+            <div style={optionLineStyleLeft}></div>
+            <div style={optionLineStyleRight}></div>
+            <p>{option}</p>
+          </div>
+        ))}
+      </div>
+      <div style={buttonContainerStyle}>
+        {questionNumber > 1 && (
+          <button style={buttonStyle} onClick={handlePreviousQuestion}>
+            Previous Question
+          </button>
+        )}
+        {questionNumber < totalQuestions && (
+          <button style={buttonStyle} onClick={handleNextQuestion}>
+            Next Question
+          </button>
+        )}
       </div>
     </div>
-    <Footer style={footerStyle} />
-    </>
+  
   );
+};
+
+QuestionPage.propTypes = {
+  questionData: PropTypes.shape({
+    question: PropTypes.string.isRequired,
+    options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
+  questionNumber: PropTypes.number.isRequired,
+  totalQuestions: PropTypes.number.isRequired,
+  handleNextQuestion: PropTypes.func.isRequired,
+  handlePreviousQuestion: PropTypes.func.isRequired,
 };
 
 export default QuestionPage;

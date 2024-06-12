@@ -8,6 +8,7 @@ import ForgotPasswordPage from './views/ForgotPassword';
 import ResetPasswordPage from './views/ResetPassword';
 import VerificationCompletePage from './views/VerificationDone';
 import QuestionPage from './views/QuestionPage';
+import QuizApp from './views/QuizApp';
 import QuizCompletionPage from './views/QuizCompletion'; // Import the new component
 import CheckCorrectionsPage from './views/CorrectionPage';
 import HomePage1 from './views/HomePage-1';
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
   {
     path: "/questions",
     element: <QuestionPage/>,
+  },
+
+  {
+    path: "/quiz",
+    element: <QuizApp />, // Route for QuizApp component
   },
 
   {
