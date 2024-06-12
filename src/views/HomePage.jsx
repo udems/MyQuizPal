@@ -77,9 +77,11 @@ function HomePage() {
             </div>
             <div className="progress">
                 <h2>Progress Tracking</h2>
-                <p>Comprehensive  reports and intuitive dashboards provide clear insights into student performance and progress. 
-                    <div className="soon">Coming Soon! </div>
-                </p>
+                <div>Comprehensive  reports and intuitive dashboards provide clear insights into student performance and progress. 
+                    {/* changed this from p tag to div  */}
+                    <p className="soon">Coming Soon! </p> 
+                    {/* changed this from div to p tag */}
+                </div>
             </div>
         </div>
         <FaqSection faqs={faqs} />

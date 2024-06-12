@@ -35,6 +35,10 @@ const SignupPage = () => {
       Swal.fire('Error', 'Passwords do not match', 'error');
       return false;
     }
+    if (password.length && confirmPassword.length < 8) {
+      Swal.fire('Error', 'Password must be at least 8 characters long', 'error');
+      return false;
+    }
     return true;
   };
 
@@ -89,14 +93,6 @@ const SignupPage = () => {
   };
   const navigate = useNavigate();
 
-  // const handleSignUp = (event) => {
-  //   event.preventDefault(); // Prevent the default form submission behavior
-
-  //   // Perform any form validation or submission logic here...
-
-  //   // Redirect to the signin after form submission
-  //   navigate('/signin'); // Redirect to signin route
-  // };
 
   const handleCancel = () => {
     document.getElementById('signup-form').reset();

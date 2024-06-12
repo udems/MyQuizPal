@@ -41,29 +41,32 @@ const SignInPage = () => {
         method: 'POST',
         url: 'https://myquizpal.onrender.com/api/login', // Ensure this URL is correct
         headers: { 
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        data: data
+        data: data,
       };
 
       try {
+        console.log('Sending request with data:', formData); // Log the request data
         const response = await axios.request(config);
         const responseData = response.data;
-        if (responseData && responseData.data.studentId) {
+        console.log('Received response:', responseData); // Log the response data
+        if (responseData && responseData.data) {
           Swal.fire('Success', 'Login successfully', 'success').then(() => {
-            navigate('/HomePage-1');
+            navigate('/welcome');
           });
         } else {
           Swal.fire('Error', 'An error occurred while logging in', 'error');
         }
       } catch (error) {
-        console.log(error)
+        console.error('Error during sign in:', error); // error logging
         if (error.response) {
+          console.error('Server response:', error.response); // Log server response
           if (error.response.status === 409) {
             Swal.fire('Error', 'credentials invalid', 'error');
           } else {
-            Swal.fire('Error', `An error occurred: ${error.response.data.data.error.title}`, 'error');
-          }
+           Swal.fire('Error', `An error occurred: ${error.response.data.data.error.title}`, 'error');
+         }
         } else {
           Swal.fire('Error', 'An unknown error occurred', 'error');
         }
@@ -71,7 +74,7 @@ const SignInPage = () => {
         setLoading(false); // Set loading state to false after request completes
       }
     }
-    navigate('/'); // Redirect to homepage route
+    // navigate('/'); // Redirect to homepage route
   };
 
   const togglePasswordVisibility = () => {
@@ -260,7 +263,7 @@ const SignInPage = () => {
           </div>
           <Link to="/forgot-password" style={forgotPasswordStyle}>Forgot Password?</Link>
           <div style={formGroupStyle}>
-            <button type="submit" style={buttonStyle} disabled={loading}>Sign In
+            <button type="submit" style={buttonStyle} disabled={loading}>
             {loading ? 'Signing In...' : 'Sign in'}
             </button>
           </div>
