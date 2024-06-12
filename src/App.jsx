@@ -9,7 +9,7 @@ import VerificationCompletePage from './views/VerificationDone';
 import QuestionPage from './views/QuestionPage';
 import QuizCompletionPage from './views/QuizCompletion'; // Import the new component
 import CheckCorrectionsPage from './views/CorrectionPage';
-
+import HomePage1 from './views/HomePage-1';
 
 import {
   createBrowserRouter,
@@ -23,7 +23,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <HomePage/>,
   },
-//Changed the path to code so as to view the new page.
   {
     path: "/code",
     element: <CodePage/>,
@@ -68,6 +67,7 @@ const router = createBrowserRouter([
 },
 
 {
+<<<<<<< HEAD
   path: "/reset-password",
   element: <ResetPasswordPage/>,
 },
@@ -76,6 +76,13 @@ const router = createBrowserRouter([
   path: "/verification-complete", // Add the new route
   element: <VerificationCompletePage />,
 },
+=======
+  path:"/HomePage-1",
+  element:<HomePage1/>
+
+},
+
+>>>>>>> 31caddb20921757217aec85c06da77266967db99
   // put other pages here
 ]);
 

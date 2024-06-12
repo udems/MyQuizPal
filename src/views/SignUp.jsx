@@ -1,11 +1,84 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { FaEye, FaEyeSlash, FaTimes,} from 'react-icons/fa';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 
 const SignupPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phoneNumber: '',
+    password: '',
+    confirmPassword: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const validateForm = () => {
+    const { firstName, lastName, email, password, confirmPassword } = formData;
+    if (!firstName || !lastName || !email || !password || !confirmPassword) {
+      Swal.fire('Error', 'All fields are required', 'error');
+      return false;
+    }
+    if (password !== confirmPassword) {
+      Swal.fire('Error', 'Passwords do not match', 'error');
+      return false;
+    }
+    return true;
+  };
+
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      setLoading(true); // Set loading state to true
+      let data = JSON.stringify(formData);
+      let config = {
+        method: 'POST',
+        url: 'https://myquizpal.onrender.com/api/register/student', // Ensure this URL is correct
+        headers: { 
+          'Content-Type': 'application/json'
+        },
+        data: data
+      };
+
+      try {
+        const response = await axios.request(config);
+        const responseData = response.data;
+        if (responseData && responseData.data.studentId) {
+          Swal.fire('Success', 'Account created successfully, redirecting to signin', 'success').then(() => {
+            navigate('/signin');
+          });
+        } else {
+          Swal.fire('Error', 'An error occurred while creating your account', 'error');
+        }
+      } catch (error) {
+        console.log(error)
+        if (error.response) {
+          if (error.response.status === 409) {
+            Swal.fire('Error', 'User with the provided credentials already exists', 'error');
+          } else {
+            Swal.fire('Error', `An error occurred: ${error.response.data.data.error.title}`, 'error');
+          }
+        } else {
+          Swal.fire('Error', 'An unknown error occurred', 'error');
+        }
+      } finally {
+        setLoading(false); // Set loading state to false after request completes
+      }
+    }
+  };
+  
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -15,6 +88,7 @@ const SignupPage = () => {
     setShowConfirmPassword(!showConfirmPassword);
   };
   const navigate = useNavigate();
+<<<<<<< HEAD
   const handleSignUp = (event) => {
     event.preventDefault(); // Prevent the default form submission behavior
 
@@ -23,10 +97,13 @@ const SignupPage = () => {
     // Redirect to the signin after form submission
     navigate('/signin'); // Redirect to signin route
   };
+=======
+>>>>>>> 31caddb20921757217aec85c06da77266967db99
 
   const handleCancel = () => {
     document.getElementById('signup-form').reset();
   };
+
   const containerStyle = {
     display: 'flex',
     width: '80%',
@@ -207,33 +284,39 @@ const SignupPage = () => {
           <div style={{ ...formGroupStyle, display: 'flex' }}>
             <div style={{ flex: '1', ...firstNameStyle }}>
               <label htmlFor="firstName" style={labelStyle}>First Name</label>
-              <input type="text" id="firstName" name="firstName" placeholder='Enter your first name' required style={inputHalfStyle} />
+              <input type="text" id="firstName" name="firstName" placeholder='Enter your first name' required style={inputHalfStyle} onChange={handleChange} />
             </div>
             <div style={{ flex: '1' }}>
               <label htmlFor="lastName" style={labelStyle}>Last Name</label>
-              <input type="text" id="lastName" name="lastName" placeholder='Enter your last name' required style={{ ...inputHalfStyle, marginRight: '0' }} />
+              <input type="text" id="lastName" name="lastName" placeholder='Enter your last name' required style={{ ...inputHalfStyle, marginRight: '0' }} onChange={handleChange} />
             </div>
           </div>
           <div style={formGroupStyle}>
             <label htmlFor="email" style={labelStyle}>Email</label>
-            <input type="email" id="email" name="email" placeholder='Enter your email address' required style={inputStyle} />
+            <input type="email" id="email" name="email" placeholder='Enter your email address' required style={inputStyle} onChange={handleChange}/>
+          </div>
+          <div style={formGroupStyle}>
+            <label htmlFor="phone_number" style={labelStyle}>Phone Number</label>
+            <input type="phoneNumber" id="phoneNumber" name="phoneNumber" placeholder='Enter your Phone Number' required style={inputStyle} onChange={handleChange}/>
           </div>
           <div style={formGroupStyle}>
             <label htmlFor="password" style={labelStyle}>Password</label>
-            <input type={showPassword ? 'text' : 'password'} id="password" name="password" placeholder='Enter your password' required style={inputStyle} />
+            <input type={showPassword ? 'text' : 'password'} id="password" name="password" placeholder='Enter your password' required style={inputStyle} onChange={handleChange}/>
             <div style={eyeIconStyle} onClick={togglePasswordVisibility}>
               {showPassword ? <FaEyeSlash /> : <FaEye />}
             </div>
           </div>
           <div style={formGroupStyle}>
             <label htmlFor="confirmPassword" style={labelStyle}>Confirm Password</label>
-            <input type={showConfirmPassword ? 'text' : 'password'} id="confirmPassword" name="confirmPassword" placeholder='Confirm your password'required style={inputStyle} />
+            <input type={showConfirmPassword ? 'text' : 'password'} id="confirmPassword" name="confirmPassword" placeholder='Confirm your password'required style={inputStyle} onChange={handleChange}/>
             <div style={eyeIconStyle} onClick={toggleConfirmPasswordVisibility}>
               {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
             </div>
           </div>
           <div style={formGroupStyle}>
-            <button type="submit" style={buttonStyle}>Sign Up</button>
+            <button type="submit" style={buttonStyle} disabled={loading}>
+              {loading ? 'Signing Up...' : 'Sign Up'}
+            </button>
           </div>
         </form>
         <div style={orSeparatorStyle}>
