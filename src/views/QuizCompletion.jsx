@@ -4,6 +4,7 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../component/Footer';
+import FeedbackHeader from '../component/FeedBack-Header';
 
 const QuizCompletionPage = () => {
   const navigate = useNavigate();
@@ -83,6 +84,7 @@ const QuizCompletionPage = () => {
 
   return (
     <div style={outerContainerStyle}>
+      <FeedbackHeader/>
       <div style={mainContentStyle}>
         <div style={innerContainerStyle}>
           <div style={{ width: '180px', height: '180px', marginBottom: '1rem', marginLeft: '10rem' }}>

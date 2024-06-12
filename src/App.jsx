@@ -12,8 +12,8 @@ import QuizApp from './views/QuizApp';
 import QuizCompletionPage from './views/QuizCompletion'; // Import the new component
 import CheckCorrectionsPage from './views/CorrectionPage';
 import HomePage1 from './views/HomePage-1';
-import ScorePage from './views/ScorePage'; // Import the ScorePage
-
+=======
+import SignUp_Extra from './views/SignUpExtra'
 
 import {
   createBrowserRouter,
@@ -93,6 +93,10 @@ const router = createBrowserRouter([
   {
   path:"/welcome",
   element: <HomePage1 />,
+},
+{
+  path:'/signup-addition',
+  element: <SignUp_Extra/>
 },
 
   // put other pages here
