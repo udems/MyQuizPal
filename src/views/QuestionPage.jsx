@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { FaStopwatch } from 'react-icons/fa';
 import PropTypes from 'prop-types';
+import Modal from 'react-modal';
 
 const QuestionPage = ({ questionData, questionNumber, totalQuestions, handleNextQuestion, handlePreviousQuestion }) => {
   const [seconds, setSeconds] = useState(0);
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(-1); // State to track selected option index
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
+  
   useEffect(() => {
     const timer = setInterval(() => {
       setSeconds(prev => prev + 1);
@@ -23,6 +26,28 @@ const QuestionPage = ({ questionData, questionNumber, totalQuestions, handleNext
     const minutes = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+  };
+
+  const handleOptionClick = (optionIndex) => {
+    setSelectedOptionIndex(optionIndex); // Update selected option index
+  };
+
+  const handleNextClick = () => {
+    if (questionNumber === totalQuestions) {
+      setIsModalOpen(true); // Open modal on last question
+    } else {
+      handleNextQuestion();
+    }
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleSubmit = () => {
+    // Handle the submit action here
+    console.log('Submit');
+    setIsModalOpen(false);
   };
 
   const containerStyle = {
@@ -127,9 +152,8 @@ const QuestionPage = ({ questionData, questionNumber, totalQuestions, handleNext
 
   const buttonContainerStyle = {
     display: 'flex',
-    justifyContent: questionNumber === 1 ? 'flex-end' : 'space-between', // Align buttons based on question number
+    justifyContent: questionNumber === 1 ? 'flex-end' : 'space-between',
     width: '80%',
-    height: '7vh',
   };
 
   const buttonStyle = {
@@ -139,11 +163,46 @@ const QuestionPage = ({ questionData, questionNumber, totalQuestions, handleNext
     border: 'none',
     borderRadius: '5px',
     cursor: 'pointer',
-    width: '10vw',
+    width: '12vw',
+    height:'7vh',
+    fontWeight: '700',
   };
 
-  const handleOptionClick = (optionIndex) => {
-    setSelectedOptionIndex(optionIndex); // Update selected option index
+  const modalStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      backgroundColor: '#fff',
+      color: '#3a2077',
+      borderRadius: '10px',
+      border: '1px solid #fff',
+      padding: '2rem',
+      paddingTop:'5rem',
+      width: '35rem',
+      textAlign: 'center',
+      height: '40vh',
+    },
+  };
+
+  const modalButtonContainerStyle = {
+    display: 'flex',
+    justifyContent: 'space-around',
+    marginTop: '2rem',
+  };
+
+  const modalButtonStyle = {
+    ...buttonStyle,
+    backgroundColor: '#EDE7F6', 
+    color: '#3a2077',
+  };
+  const modalButtonStyle2 = {
+    ...buttonStyle,
+    backgroundColor: '#3a2077',
+    color: '#fff',
   };
 
   return (
@@ -167,9 +226,9 @@ const QuestionPage = ({ questionData, questionNumber, totalQuestions, handleNext
             style={{
               ...optionBoxStyle,
               backgroundColor: selectedOptionIndex === index ? '#fff' : optionBoxStyle.backgroundColor,
-              color: selectedOptionIndex === index ? 'purple' : '#fff', // Change text color when selected
+              color: selectedOptionIndex === index ? 'purple' : '#fff',
             }}
-            onClick={() => handleOptionClick(index)} // Handle option click
+            onClick={() => handleOptionClick(index)}
           >
             <div style={optionLineStyleLeft}></div>
             <div style={optionLineStyleRight}></div>
@@ -184,13 +243,33 @@ const QuestionPage = ({ questionData, questionNumber, totalQuestions, handleNext
           </button>
         )}
         {questionNumber < totalQuestions && (
-          <button style={buttonStyle} onClick={handleNextQuestion}>
+          <button style={buttonStyle} onClick={handleNextClick}>
             Next Question
           </button>
         )}
+        {questionNumber === totalQuestions && (
+          <button style={buttonStyle} onClick={handleNextClick}>
+            Submit
+          </button>
+        )}
       </div>
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={handleCloseModal}
+        style={modalStyles}
+        contentLabel="Confirmation Modal"
+      >
+        <h2>Are you sure you want to submit?</h2>
+        <div style={modalButtonContainerStyle}>
+          <button style={modalButtonStyle} onClick={handleSubmit}>
+            Cancel
+          </button>
+          <button style={modalButtonStyle2} onClick={handleCloseModal}>
+            Submit
+          </button>
+        </div>
+      </Modal>
     </div>
-  
   );
 };
 
