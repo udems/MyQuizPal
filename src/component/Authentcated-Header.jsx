@@ -43,7 +43,7 @@ const AuthentcatedHeader =({name,src,alt})=>{
                 </div>
 
                 <section className="header-others">
-                    <Button text = "Enter Assessment Code" onClick={()=>{window.location.href='/Assessment'}} className="btn-assessment"/>
+                    <Button text = "Enter Assessment Code" onClick={()=>{window.location.href='/code'}} className="btn-assessment"/>
                     
                     <div className="word-container">
                         <p>Welcome&#33;</p>
