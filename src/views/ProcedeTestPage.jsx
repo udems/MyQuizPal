@@ -1,5 +1,5 @@
 import Footer from '../component/Footer';
-import Button from '../component/button';
+import Button from '../component/Button';
 // import EnterCode from '../component/EnterCode-Header';
 
 

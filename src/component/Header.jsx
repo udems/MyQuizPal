@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import Button from '../component/button';
+import Button from './Button';
 // import { Link } from 'react-router-dom';
 
 
@@ -32,7 +32,7 @@ function Header(){
                         <li><a href="#teachers"> For Teachers </a></li>
                         <li><a href='#students'>For students</a></li>
                         <li><a href="#features">Features</a></li>
-                        <li><a href="#FAQs">FAQs</a></li>
+                        <li><a href="#faqsPage">FAQs</a></li>
                     </ul>
                 </div>
                 <div className="header-nav-buttons">

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import MYQUIZAImage from '../assets/MYQUIZA-removebg-preview.png';
 import { Link } from 'react-router-dom';
-import Button from '../component/button';
+import Button from './Button';
 import PropTypes from 'prop-types';
 
 

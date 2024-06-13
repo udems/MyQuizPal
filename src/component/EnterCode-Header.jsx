@@ -1,5 +1,5 @@
 import MYQUIZAImage from '../assets/MYQUIZA-removebg-preview.png';
-import Button from '../component/button';
+import Button from './Button';
 
 const EnterCode = ()=>{
     return (
