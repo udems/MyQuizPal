@@ -8,7 +8,6 @@ const QuestionPage = ({ questionData, questionNumber, totalQuestions, handleNext
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(-1); // State to track selected option index
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  
   useEffect(() => {
     const timer = setInterval(() => {
       setSeconds(prev => prev + 1);
@@ -154,6 +153,7 @@ const QuestionPage = ({ questionData, questionNumber, totalQuestions, handleNext
     display: 'flex',
     justifyContent: questionNumber === 1 ? 'flex-end' : 'space-between',
     width: '80%',
+    marginTop: '2rem',
   };
 
   const buttonStyle = {
@@ -163,9 +163,10 @@ const QuestionPage = ({ questionData, questionNumber, totalQuestions, handleNext
     border: 'none',
     borderRadius: '5px',
     cursor: 'pointer',
-    width: '12vw',
-    height:'7vh',
+    width: '12rem',
+    height: '7vh',
     fontWeight: '700',
+    marginLeft: '1.5rem',
   };
 
   const modalStyles = {
@@ -177,32 +178,36 @@ const QuestionPage = ({ questionData, questionNumber, totalQuestions, handleNext
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
       backgroundColor: '#fff',
-      color: '#3a2077',
+      color: '#673ab7',
       borderRadius: '10px',
-      border: '1px solid #fff',
-      padding: '2rem',
-      paddingTop:'5rem',
-      width: '35rem',
+      border: '1px solid #ccc',
       textAlign: 'center',
-      height: '40vh',
+      width: '35vw',
+      height: '32vh',
     },
   };
 
   const modalButtonContainerStyle = {
     display: 'flex',
     justifyContent: 'space-around',
-    marginTop: '2rem',
+    marginTop:'5rem',
   };
 
   const modalButtonStyle = {
     ...buttonStyle,
-    backgroundColor: '#EDE7F6', 
-    color: '#3a2077',
+    backgroundColor: '#EDE7F6',
+    color: '#673ab7', 
+    width: '10rem',
+    height: '6vh',
+    fontWeight: '700',// Different color for modal buttons
   };
+
   const modalButtonStyle2 = {
     ...buttonStyle,
-    backgroundColor: '#3a2077',
-    color: '#fff',
+    backgroundColor: '#673ab7', 
+    width: '10rem',
+    height: '6vh',
+    fontWeight: '700',// Different color for modal buttons
   };
 
   return (

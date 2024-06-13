@@ -12,7 +12,6 @@ import QuizApp from './views/QuizApp';
 import QuizCompletionPage from './views/QuizCompletion'; // Import the new component
 import CheckCorrectionsPage from './views/CorrectionPage';
 import HomePage1 from './views/HomePage-1';
-=======
 import SignUp_Extra from './views/SignUpExtra'
 
 import {
@@ -52,10 +51,6 @@ const router = createBrowserRouter([
     element: <QuizCompletionPage />,
   },
 
-  {
-    path: "/score",
-    element: <ScorePage />, // Add route for ScorePage
-  },
 
   {
     path: "/check-correction", // Add the new route
