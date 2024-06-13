@@ -37,7 +37,7 @@ export function ProcedeTestPage() {
            </div>
            <div style={{display:'flex', gap:'600px', paddingTop:'30px'}}>
                 <p style={{fontSize:'24px'}}>Lets dive in and embark on this quiz adventure together! Click <br/> the Start Quiz button to begin your quest for knowledge.</p>
-                <Button text="Start quiz" onClick={() => { window.location.href = '/signup'; }} />
+                <Button text="Start quiz" onClick={() => { window.location.href = '/quiz'; }} />
            </div>
         </div>
         <Footer/>

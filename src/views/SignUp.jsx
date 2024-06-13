@@ -106,7 +106,7 @@ const SignupPage = () => {
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
     margin: '0 auto',
     marginTop: '1rem',
-    height: '95vh',
+    height: '100vh',
     alignItems: 'center',
     justifyContent: 'center',
   };

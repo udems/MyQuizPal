@@ -7,10 +7,12 @@ import SignInPage from './views/SignIn';
 import ForgotPasswordPage from './views/ForgotPassword';
 import ResetPasswordPage from './views/ResetPassword';
 import VerificationCompletePage from './views/VerificationDone';
-import QuestionPage from './views/QuestionPage';
+import QuizApp from './views/QuizApp';
 import QuizCompletionPage from './views/QuizCompletion'; // Import the new component
 import CheckCorrectionsPage from './views/CorrectionPage';
 import HomePage1 from './views/HomePage-1';
+import SignUp_Extra from './views/SignUpExtra';
+
 
 import {
   createBrowserRouter,
@@ -35,14 +37,16 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/questions",
-    element: <QuestionPage/>,
+    path: "/quiz",
+    element: <QuizApp />, // Route for QuizApp component
   },
 
   {
     path: "/quiz-completion", // Add the new route
     element: <QuizCompletionPage />,
   },
+
+
   {
     path: "/check-correction", // Add the new route
     element: <CheckCorrectionsPage />,
@@ -79,6 +83,10 @@ const router = createBrowserRouter([
   {
   path:"/welcome",
   element: <HomePage1 />,
+},
+{
+  path:'/signup-addition',
+  element: <SignUp_Extra/>
 },
 
   // put other pages here

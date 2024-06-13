@@ -2,6 +2,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../component/Footer';
+import FeedbackHeader from '../component/FeedBack-Header'
 
 const CheckCorrectionsPage = () => {
   const navigate = useNavigate();
@@ -94,6 +95,7 @@ const CheckCorrectionsPage = () => {
 
   return (
     <div style={outerContainerStyle}>
+      <FeedbackHeader/>
       <div style={mainContentStyle}>
         <div style={innerContainerStyle}>
           <h2 style={headerStyle}>Check Corrections</h2>
