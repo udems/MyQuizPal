@@ -43,11 +43,11 @@ const QuestionPage = ({ questionData, questionNumber, totalQuestions, handleNext
     setIsModalOpen(false);
   };
 
-  const handleSubmit = () => {
-    // Handle the submit action here
-    console.log('Submit');
-    setIsModalOpen(false);
-  };
+  // const handleSubmit = () => {
+  //   // Handle the submit action here
+  //   console.log('Submit');
+  //   setIsModalOpen(false);
+  // };
 
   const containerStyle = {
     display: 'flex',
@@ -266,10 +266,10 @@ const QuestionPage = ({ questionData, questionNumber, totalQuestions, handleNext
       >
         <h2>Are you sure you want to submit?</h2>
         <div style={modalButtonContainerStyle}>
-          <button style={modalButtonStyle} onClick={handleSubmit}>
+          <button style={modalButtonStyle} onClick={handleCloseModal}>
             Cancel
           </button>
-          <button style={modalButtonStyle2} onClick={handleCloseModal}>
+          <button style={modalButtonStyle2} onClick={()=>{window.location.href='/quiz-completion'}} >
             Submit
           </button>
         </div>
