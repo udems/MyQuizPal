@@ -8,6 +8,7 @@ import ForgotPasswordPage from './views/ForgotPassword';
 import ResetPasswordPage from './views/ResetPassword';
 import VerificationCompletePage from './views/VerificationDone';
 import QuizApp from './views/QuizApp';
+import PracticeQuizApp from './views/PracticeQuizApp';
 import QuizCompletionPage from './views/QuizCompletion'; // Import the new component
 import CheckCorrectionsPage from './views/CorrectionPage';
 import HomePage1 from './views/HomePage-1';
@@ -19,6 +20,7 @@ import {
   RouterProvider
 } from 'react-router-dom';
 import { ProcedeTestPage } from './views/ProcedeTestPage';
+// import PracticeQuizApp from './views/PracticeQuizApp';
 
 
 const router = createBrowserRouter([
@@ -35,7 +37,10 @@ const router = createBrowserRouter([
     path: "/procede",
     element: <ProcedeTestPage/>,
   },
-
+    {
+      path: "/practice-quiz",
+      element: <PracticeQuizApp/>
+    },
   {
     path: "/quiz",
     element: <QuizApp />, // Route for QuizApp component

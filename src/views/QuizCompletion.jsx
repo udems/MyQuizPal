@@ -101,7 +101,7 @@ const QuizCompletionPage = () => {
           </div>
           <p style={sentenceStyle1}>Congratulations!</p>
           <p style={sentenceStyle}>Quiz completed successfully. Keep up the good work!</p>
-          <p style={sentenceStyle}>You attempted 10 questions and from that 7 questions are correct.</p>
+          <p style={sentenceStyle}>You attempted 5 questions and from that 3 questions are correct.</p>
           <div style={buttonContainerStyle}>
             <button style={buttonStyle2} onClick={() => navigate('/')}>Back to Home</button>
             <button style={buttonStyle} onClick={() => navigate('/check-correction')}>Check Corrections</button>

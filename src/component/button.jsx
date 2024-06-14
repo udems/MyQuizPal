@@ -1,6 +1,4 @@
-
 import PropTypes from 'prop-types';
-
 
 const Button = ({ text, onClick, type = 'button', className = '' }) => {
     return (
@@ -16,4 +14,4 @@ Button.propTypes = {
     className: PropTypes.string,
 };
 
-export default Button
+export default Button;

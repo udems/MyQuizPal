@@ -3,7 +3,7 @@ import FaqSection from './FaqSection';
 import { faqs } from '../data';
 import Footer from '../component/Footer';
 import profileImg from '../assets/pexels-olly-774909.jpg';
-import Button from '../component/button'
+import Button from '../component/button';
 function HomePage1() {
 
     return(
@@ -19,7 +19,7 @@ function HomePage1() {
                 </p>
                 <div className='interact-button-1'><Button text="Register School" onClick={() => { window.location.href = '/signup'; }} /></div>
                 <div className='interact-button-2'>
-                <Button text="Practice quiz" onClick={() => { window.location.href = '/code'; }} />
+                <Button text="Practice quiz" onClick={() => { window.location.href = '/practice-quiz'; }} />
                 </div>
             </div>
             <div className="img1">

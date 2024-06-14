@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { FaEye, FaEyeSlash, FaTimes,} from 'react-icons/fa';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import './SignUp.css';
 
 
 const SignupPage = () => {
@@ -263,8 +264,115 @@ const SignupPage = () => {
     opacity: '0.4', // Make the eye icon transparent
   };
 
+  const mediaQueryStyles = {
+    containerStyle: {
+      ...containerStyle,
+      flexDirection: 'column',
+      width: '95%',
+      height: 'auto',
+    },
+    cancelIconContainerStyle: {
+      ...cancelIconContainerStyle,
+      top: '170px',
+      right: '20px',
+    },
+    logoSectionStyle: {
+      ...logoSectionStyle,
+      flex: 'none',
+      width: '100%',
+      height: 'auto',
+      padding: '10px',
+    },
+    signupSectionStyle: {
+      ...signupSectionStyle,
+      flex: 'none',
+      width: '100%',
+      padding: '10px',
+    },
+    labelStyle: {
+      display: 'block',
+      marginBottom: '5px',
+      marginLeft: '1.5rem',
+    },
+    inputStyle: {
+      ...inputStyle,
+      width: '88%',
+      marginLeft: '1.5rem',
+    },
+    inputHalfStyle: {
+      ...inputHalfStyle,
+      width: '80%',
+      marginLeft: '1rem',
+      marginTop: '1rem',  // Ensure lastname comes down
+    },
+
+    firstNameStyle: {
+      ...firstNameStyle,
+      marginRight: '0.1rem',
+      marginLeft: '0.3rem' // Add margin to the right
+    },
+    
+    lastNameStyle: {
+      ...inputHalfStyle,
+    },
+    
+    buttonStyle: {
+      ...buttonStyle,
+      width: '88%',
+      marginLeft: '1.5rem',
+    },
+    googleButtonStyle: {
+      ...googleButtonStyle,
+      width: '90%',
+      marginLeft: '1rem',
+    },
+    headerStyle: {
+      ...headerStyle,
+      marginLeft: '1rem',
+    },
+    sentenceStyle: {
+      ...sentenceStyle,
+      marginLeft: '1rem',
+    },
+    orSeparatorStyle: {
+      ...orSeparatorStyle,
+      marginLeft: '2.2rem',
+      width: '80%',
+    },
+    eyeIconStyle: {
+      ...eyeIconStyle,
+      right: '1.5rem',
+    },
+  };
+  
+  // Apply the media query styles if the window width is less than or equal to 740px
+  const applyMediaQueryStyles = () => {
+    if (window.innerWidth <= 740) {
+      Object.assign(containerStyle, mediaQueryStyles.containerStyle);
+      Object.assign(cancelIconContainerStyle, mediaQueryStyles.cancelIconContainerStyle);
+      Object.assign(logoSectionStyle, mediaQueryStyles.logoSectionStyle);
+      Object.assign(signupSectionStyle, mediaQueryStyles.signupSectionStyle);
+      Object.assign(inputStyle, mediaQueryStyles.inputStyle);
+      Object.assign(labelStyle, mediaQueryStyles.labelStyle);
+      Object.assign(inputHalfStyle, mediaQueryStyles.inputHalfStyle);
+      Object.assign(firstNameStyle, mediaQueryStyles.firstNameStyle);
+      Object.assign(buttonStyle, mediaQueryStyles.buttonStyle);
+      Object.assign(googleButtonStyle, mediaQueryStyles.googleButtonStyle);
+      Object.assign(headerStyle, mediaQueryStyles.headerStyle);
+      Object.assign(sentenceStyle, mediaQueryStyles.sentenceStyle);
+      Object.assign(orSeparatorStyle, mediaQueryStyles.orSeparatorStyle);
+      Object.assign(eyeIconStyle, mediaQueryStyles.eyeIconStyle);
+    }
+  };
+  
+  // Initial application of media query styles
+  applyMediaQueryStyles();
+  
+  // Re-apply media query styles on window resize
+  window.addEventListener('resize', applyMediaQueryStyles);
+
   return (
-    <div style={containerStyle}>
+    <div className='container' style={containerStyle}>
         <div style={cancelIconContainerStyle} onClick={handleCancel}>
         <FaTimes style={cancelIconStyle} />
       </div>

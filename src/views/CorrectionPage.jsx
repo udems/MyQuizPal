@@ -2,16 +2,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../component/Footer';
-import FeedbackHeader from '../component/FeedBack-Header'
+import FeedbackHeader from '../component/FeedBack-Header';
 
 const CheckCorrectionsPage = () => {
   const navigate = useNavigate();
-  const score = 75; // This should be passed as a prop or fetched from the quiz result
   const corrections = [
-    { question: 'Question 1', correctAnswer: 'Answer A', yourAnswer: 'Answer B' },
-    { question: 'Question 2', correctAnswer: 'Answer C', yourAnswer: 'Answer C' },
-    { question: 'Question 3', correctAnswer: 'Answer D', yourAnswer: 'Answer A' },
-    // Add more corrections as needed
+    { question: '1. The situation in which parents are willing and are able to make sensible decisions regarding their family is referred to as?', correctAnswer: 'Responsible parenthood', explanation: '' },
+    { question: '3. All but one is not an important factor in responsible parenthood.', correctAnswer: 'Formal education', explanation: '' },
   ];
 
   const outerContainerStyle = {
@@ -30,50 +27,47 @@ const CheckCorrectionsPage = () => {
     alignItems: 'center',
     flex: '1',
     padding: '2rem',
-    backgroundColor: '#673ab7',
+    backgroundColor: '#3a2077',
   };
 
   const innerContainerStyle = {
-    backgroundColor: '#fff', // White background for the inner container
+    backgroundColor: '#3a2077', // White background for the inner container
     padding: '2rem',
     marginTop: '3rem',
     borderRadius: '10px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    textAlign: 'center',
     maxWidth: '800px',
     width: '100%',
+    color: '#fff',
+    textAlign: 'left',
   };
 
   const correctionsGridStyle = {
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
+    display: 'flex',
+    flexWrap: 'wrap',
     gap: '1rem',
     marginBottom: '2rem',
   };
 
   const correctionItemStyle = {
+    flex: '1 1 calc(50% - 1rem)',
     padding: '1rem',
-    border: '1px solid #ccc',
     borderRadius: '5px',
+    boxSizing: 'border-box',
   };
 
   const headerStyle = {
     fontSize: '2rem',
-    marginBottom: '1rem',
+    marginBottom: '2rem',
+    textAlign: 'center',
   };
 
   const sentenceStyle1 = {
     fontSize: '1.4rem',
     marginBottom: '1rem',
     textAlign: 'center',
-    color: '#673ab7',
+    color: '#fff',
     fontWeight: 'bold',
-  };
-
-  const sentenceStyle = {
-    fontSize: '1rem',
-    marginBottom: '1rem',
-    textAlign: 'center',
   };
 
   const buttonContainerStyle = {
@@ -95,22 +89,24 @@ const CheckCorrectionsPage = () => {
 
   return (
     <div style={outerContainerStyle}>
-      <FeedbackHeader/>
+      <FeedbackHeader />
       <div style={mainContentStyle}>
         <div style={innerContainerStyle}>
           <h2 style={headerStyle}>Check Corrections</h2>
           <div style={correctionsGridStyle}>
             {corrections.map((correction, index) => (
               <div key={index} style={correctionItemStyle}>
-                <p><strong>{correction.question}</strong></p>
-                <p><strong>Correct Answer:</strong> {correction.correctAnswer}</p>
-                <p><strong>Your Answer:</strong> {correction.yourAnswer}</p>
+                <p><strong >{correction.question}</strong></p> <br /><br />
+                <p><strong>Correct Answer:</strong><br /><br /> {correction.correctAnswer}</p>
+                <p>{correction.explanation}</p>
+                <p>There is no particular order definition of responsible parenthood. However, it is referred to as the situation in which parents are willing and are able to make sensible decisions regarding their family.</p>
+                <p>The option ‘B’ Formal education is one of the roles of being a responsible parent. It involves the ability of the parents to send their children to good schools, buy necessary books for them, be sure to track and follow up with their academic progress.</p>
               </div>
             ))}
           </div>
-          <p style={sentenceStyle1}>Your Score: {score}%</p>
+          <p style={sentenceStyle1}>Your Score: 3/5</p>
           <div style={buttonContainerStyle}>
-            <button style={buttonStyle} onClick={() => navigate('/')}>Back to Home</button>
+            <button style={buttonStyle} onClick={() => navigate('/welcome')}>Back to Home</button>
           </div>
         </div>
       </div>
