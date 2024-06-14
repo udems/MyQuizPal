@@ -14,7 +14,6 @@ function HomePage1() {
 
     return(
         <>
-      
         <AuthentcatedHeader name='Ryan' src={profileImg}/>
 
         <div className="interact-flex" >
@@ -95,4 +94,4 @@ function HomePage1() {
     )
 }
 
-export default HomePage1
+export default HomePage1;

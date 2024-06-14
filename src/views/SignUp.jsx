@@ -3,7 +3,6 @@ import { useNavigate, Link } from 'react-router-dom';
 import { FaEye, FaEyeSlash, FaTimes,} from 'react-icons/fa';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import './SignUp.css';
 import companyLogo from '../assets/Logo.png';
 import googleLogo from '../assets/google_symbol.svg.png';
 

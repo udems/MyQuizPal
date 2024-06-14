@@ -294,15 +294,15 @@ body {
   display: flex;
   gap: 30px;
 }
-.header-nav-buttons button{
-  color: #673AB7;
+.header-nav-buttons button {
+  color: #673ab7;
 }
-.header-nav-buttons .btn-signup{
+.header-nav-buttons .btn-signup {
   background-color: transparent;
   color: white;
   transition: background-color 1s ease-in;
 }
-.header-nav-buttons .btn-signup:hover{
+.header-nav-buttons .btn-signup:hover {
   background-color: #2b184d;
 }
 .header-logo-links {
@@ -510,11 +510,12 @@ Others are in FaqSection.css in the FaqCss folder */
 }
 .mainContainer {
   position: relative;
-  left: 10%;
+  left: 15rem;
   width: 60vw;
-  height: 90vh;
+  height: 95vh;
   margin-top: 20px;
   border: none;
+  box-shadow: "0 0 10px rgba(0, 0, 0, 0.1)";
 }
 
 .secondContainer {
@@ -530,7 +531,6 @@ Others are in FaqSection.css in the FaqCss folder */
   width: 25vw;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  box-shadow: -1px 1px 1px black;
 }
 
 .secondContainer .img-container img {
@@ -545,12 +545,12 @@ Others are in FaqSection.css in the FaqCss folder */
   width: 45vw;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  box-shadow: 0.5px 0.5px 0.5px black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .cancel-btn {
   position: absolute;
-  top: 15px;
+  top: 25px;
   right: -70px;
   margin-top: 0px;
   padding: 5px;
@@ -671,7 +671,6 @@ Others are in FaqSection.css in the FaqCss folder */
 
 .googleLogo {
   margin-right: 2px;
-  color: #4285f4;
   font-size: 1.4rem;
 }
 
@@ -726,7 +725,6 @@ Others are in FaqSection.css in the FaqCss folder */
   /* Styles for mobile devices */
   .header {
     background-color: lightblue;
-    
   }
 }
 
@@ -736,20 +734,20 @@ Others are in FaqSection.css in the FaqCss folder */
     padding-right: 2px;
     font-size: 0.8rem;
   }
-  .header-logo-links{
+  .header-logo-links {
     gap: 10px;
   }
-  .header-nav-buttons{
+  .header-nav-buttons {
     gap: 5px;
     margin-left: 4px;
   }
-  .header-nav-buttons button{
+  .header-nav-buttons button {
     font-size: 0.7rem;
   }
-  .header-nav-links{
+  .header-nav-links {
     gap: 15px;
   }
-  .word-container{
+  .word-container {
     display: none;
   }
 }
@@ -760,21 +758,20 @@ Others are in FaqSection.css in the FaqCss folder */
     padding-right: 10px;
     font-size: 1rem;
   }
-  .header-logo-links{
+  .header-logo-links {
     gap: 10px;
   }
-  
-  .header-nav-buttons{
+
+  .header-nav-buttons {
     gap: 5px;
   }
-  .header-nav-buttons button{
+  .header-nav-buttons button {
     font-size: 0.8rem;
   }
-  .word-container{
+  .word-container {
     display: none;
   }
 }
-
 
 @media only screen and (min-width: 800px) and (max-width: 950px) {
   .header {
@@ -782,22 +779,20 @@ Others are in FaqSection.css in the FaqCss folder */
     padding-right: 30px;
     font-size: 1rem;
   }
-  .header-nav-buttons{
+  .header-nav-buttons {
     gap: 5px;
   }
-  .word-container{
+  .word-container {
     display: none;
   }
 }
 
-
 @media (min-width: 950px) and (max-width: 1080px) {
-  .header{
+  .header {
     padding: 5px 0;
     padding-right: 30px;
-  } 
-  .header-nav-buttons{
+  }
+  .header-nav-buttons {
     gap: 5px;
   }
 }
-
