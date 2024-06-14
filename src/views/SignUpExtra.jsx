@@ -3,9 +3,7 @@ import { FaTimes, FaGoogle } from 'react-icons/fa';
 import MYQUIZAImage from '../assets/MYQUIZA-removebg-preview.png';
 import profileImg from '../assets/pexels-olly-774909.jpg';
 
-
 const SignUp_Extra=()=>{
-
 
     return(
         <>
@@ -77,4 +75,4 @@ const SignUp_Extra=()=>{
         
     )
 }
-export default SignUp_Extra
+export default SignUp_Extra;

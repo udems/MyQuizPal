@@ -8,7 +8,6 @@ function HomePage1() {
 
     return(
         <>
-      
         <AuthentcatedHeader name='Ryan' src={profileImg}/>
 
         <div className="interact-flex" >
