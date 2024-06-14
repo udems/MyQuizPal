@@ -1,10 +1,11 @@
 // QuizCompletionPage.jsx
-import React from 'react';
+// import React from 'react';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../component/Footer';
 import FeedbackHeader from '../component/FeedBack-Header';
+import profileImg from '../assets/pexels-olly-774909.jpg';
 
 const QuizCompletionPage = () => {
   const navigate = useNavigate();
@@ -84,7 +85,7 @@ const QuizCompletionPage = () => {
 
   return (
     <div style={outerContainerStyle}>
-      <FeedbackHeader/>
+      <FeedbackHeader name='Ryan' src={profileImg} style={{backgroundColor: '#673AB7'}}/>
       <div style={mainContentStyle}>
         <div style={innerContainerStyle}>
           <div style={{ width: '180px', height: '180px', marginBottom: '1rem', marginLeft: '10rem' }}>

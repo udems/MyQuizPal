@@ -1,8 +1,9 @@
 // CheckCorrectionsPage.jsx
-import React from 'react';
+// import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../component/Footer';
 import FeedbackHeader from '../component/FeedBack-Header';
+
 
 const CheckCorrectionsPage = () => {
   const navigate = useNavigate();
@@ -89,7 +90,11 @@ const CheckCorrectionsPage = () => {
 
   return (
     <div style={outerContainerStyle}>
+<<<<<<< HEAD
       <FeedbackHeader />
+=======
+      <FeedbackHeader name='Ryan' src={profileImg} style={{backgroundColor:'#673AB7'}}/>
+>>>>>>> c9d4a0cc1af32bb1510d3d3b042b86ae2206178d
       <div style={mainContentStyle}>
         <div style={innerContainerStyle}>
           <h2 style={headerStyle}>Check Corrections</h2>

@@ -1,8 +1,8 @@
 import Header from '../component/Header';
 import FaqSection from '../views/FaqSection';
 import { faqs } from '../data';
-import Button from '../component/button'
-import Footer from '../component/Footer'
+import Button from '../component/button';
+import Footer from '../component/Footer';
 
 function HomePage() {
 
@@ -50,7 +50,7 @@ function HomePage() {
             <h1>KEY FEATURES</h1>
         </div>
         <div className="engage-flex">
-        <div className="img4">
+            <div className="img4">
                 <img src="src\assets\istockphoto-1490656132-170667a 1.png" alt="" />
             </div>
             <div className="engage">
@@ -83,10 +83,10 @@ function HomePage() {
                 </div>
             </div>
         </div>
-        <FaqSection faqs={faqs} />
+        <FaqSection id="faqsPage" faqs={faqs} />
         <Footer/>
         </>
     )
 }
 
-export default HomePage
+export default HomePage;

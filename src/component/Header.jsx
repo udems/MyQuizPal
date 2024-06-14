@@ -32,12 +32,12 @@ function Header(){
                         <li><a href="#teachers"> For Teachers </a></li>
                         <li><a href='#students'>For students</a></li>
                         <li><a href="#features">Features</a></li>
-                        <li><a href="#FAQs">FAQs</a></li>
+                        <li><a href="#faqsPage">FAQs</a></li>
                     </ul>
                 </div>
                 <div className="header-nav-buttons">
-                    <Button text="Sign In" onClick={() => { window.location.href = '/signin'; }} />
-                    <Button text="Sign Up" onClick={() => { window.location.href = '/signup'; }} />
+                    <Button text="Log in" onClick={() => { window.location.href = '/signin'; }} />
+                    <Button text="Sign up" onClick={() => { window.location.href = '/signup'; }}className='btn-signup' />
                 </div>
             </nav>
         </header>
