@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import Button from '../component/button';
 // import { Link } from 'react-router-dom';
+import {logo} from '../assets/MYQUIZA-removebg-preview.png';
 
 
 function Header(){
@@ -26,7 +27,7 @@ function Header(){
             <nav className="header-nav">
                 <div className='header-logo-links'>
                     <div className="logo-container">
-                        <img src="src\assets\MYQUIZA-removebg-preview.png" alt="Logo" className="logo" />
+                        <img src={logo} alt="Logo" className="logo" />
                     </div>
                     <ul className="header-nav-links">
                         <li><a href="#teachers"> For Teachers </a></li>
