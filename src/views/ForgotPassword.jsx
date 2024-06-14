@@ -1,6 +1,7 @@
 // import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
+import companyLogo from '../assets/Logo.png';
 
 const ForgotPasswordPage = () => {
   const navigate = useNavigate();
@@ -107,7 +108,7 @@ const ForgotPasswordPage = () => {
   return (
     <div style={containerStyle}>
       <div style={logoSectionStyle}>
-        <img src="src/assets/Logo.png" alt="Company Logo" style={logoStyle} />
+        <img src={companyLogo} alt="Company Logo" style={logoStyle} />
       </div>
       <div style={forgotPasswordSectionStyle}>
         <div style={cancelIconContainerStyle} onClick={handleCancel}>

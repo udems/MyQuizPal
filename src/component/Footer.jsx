@@ -1,10 +1,12 @@
 import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
+import logo from '../assets/MYQUIZA-removebg-preview.png';
+
 const Footer = () => {
     return (
       <footer className="footer">
         <div className="footer-together">
         <div className="footer-logo">
-        <img src="src\assets\MYQUIZA-removebg-preview.png" alt="" />
+        <img src={logo} alt="" />
         </div>
         <div className="footer-about">
             <h3>About Us</h3>

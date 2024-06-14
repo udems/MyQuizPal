@@ -46,9 +46,9 @@ const SignUp_Extra=()=>{
                 </section>
 
                 <div className="container-verify">
-                    <button>
+                    <Link to="/signup"><button>
                         Sign Up
-                        </button>
+                        </button></Link>
                     
                
                 <div className='orSeparatorStyle'>
@@ -57,9 +57,9 @@ const SignUp_Extra=()=>{
                     <div className='lineStyle'></div>
                 </div>
 
-                <Link to="/signup"><button className='signUp-Google'>
-                    <FaGoogle className='googleLogo'/>
-                    Sign Up with Google</button></Link>
+                <button className='signUp-Google'>
+                <img src="src\assets\google_symbol.svg.png" alt="Google Logo" />
+                    Sign Up with Google</button>
 
                 <p>Already have an account&#63; <Link to ="/signin" className='link-signin'>Sign In</Link></p>
                 </div>

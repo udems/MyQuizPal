@@ -4,6 +4,12 @@ import { faqs } from '../data';
 import Footer from '../component/Footer';
 import profileImg from '../assets/pexels-olly-774909.jpg';
 import Button from '../component/button';
+import pic1 from '../assets/istockphoto-1490709077-170667a 1.png';
+import pic2 from '../assets/istockphoto-1286100048-612x612 1.png';
+import pic3 from '../assets/unsplash_cbL3UVrDozk.png';
+import pic4 from '../assets/istockphoto-1490656132-170667a 1.png';
+import pic5 from '../assets/istockphoto-861128944-170667a 1.png';
+import pic6 from '../assets/image 2.png';
 function HomePage1() {
 
     return(
@@ -22,13 +28,13 @@ function HomePage1() {
                 </div>
             </div>
             <div className="img1">
-                <img src="src\assets\istockphoto-1490709077-170667a 1.png" alt="" />
+                <img src={pic1} alt="" />
             </div>
             
         </div>
         <div className="empower-flex" id='teachers'>
             <div className="img2">
-                <img src="src\assets\istockphoto-1286100048-612x612 1.png" alt="" />
+                <img src={pic2} alt="" />
             </div>
             <div className="empower">
                 <h2>Empower Your Teaching </h2>
@@ -44,7 +50,7 @@ function HomePage1() {
                 <div className='learning-button'><Button text="Take Assessment" onClick={() => { window.location.href = '/code'; }} /></div>
             </div>
             <div className="img3">
-                <img src="src\assets\unsplash_cbL3UVrDozk.png" alt="" />
+                <img src={pic3} alt="" />
             </div>
         </div>
         <div className="key" id='features'>
@@ -52,7 +58,7 @@ function HomePage1() {
         </div>
         <div className="engage-flex">
             <div className="img4">
-                <img src="src\assets\istockphoto-1490656132-170667a 1.png" alt="" />
+                <img src={pic4} alt="" />
             </div>
             <div className="engage">
                 <h2>Interactive Quizzes</h2>
@@ -68,12 +74,12 @@ function HomePage1() {
                 </p>
             </div>
             <div className="img5">
-                <img src="src\assets\istockphoto-861128944-170667a 1.png" alt="" />
+                <img src={pic5} alt="" />
             </div>
         </div>
         <div className="progress-flex">
             <div className="img6">
-                <img src="src\assets\image 2.png" alt="" />
+                <img src={pic6} alt="" />
             </div>
             <div className="progress">
                 <h2>Progress Tracking</h2>
@@ -88,4 +94,4 @@ function HomePage1() {
     )
 }
 
-export default HomePage1
+export default HomePage1;

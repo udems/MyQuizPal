@@ -4,7 +4,8 @@ import { useNavigate, Link } from 'react-router-dom';
 import { FaTimes, FaEye, FaEyeSlash, } from 'react-icons/fa';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-
+import companyLogo from '../assets/Logo.png';
+import googleLogo from '../assets/google_symbol.svg.png';
 const SignInPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -354,7 +355,7 @@ const SignInPage = () => {
   return (
     <div style={containerStyle}>
       <div style={logoSectionStyle}>
-        <img src="src/assets/Logo.png" alt="Company Logo" style={logoStyle} />
+        <img src={companyLogo} alt="Company Logo" style={logoStyle} />
       </div>
       <div style={signinSectionStyle}>
         <div style={cancelIconContainerStyle} onClick={handleCancel}>
@@ -389,7 +390,7 @@ const SignInPage = () => {
           <div style={lineStyle}></div>
         </div>
         <button style={googleButtonStyle} onClick={() => { /* Handle Google sign-in */ }}>
-          <img src="src\assets\google_symbol.svg.png" alt="Google Logo" style={googleLogoStyle} />
+          <img src={googleLogo} alt="Google Logo" style={googleLogoStyle} />
           Sign in with Google
         </button>
         <div style={signupLinkStyle}>

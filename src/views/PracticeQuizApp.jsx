@@ -1,6 +1,6 @@
 // src/QuizApp.js
 
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import PracticePage from './PracticePage';
 import Footer from '../component/Footer';
 import questions from './original';
