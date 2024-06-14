@@ -417,7 +417,7 @@ Others are in FaqSection.css in the FaqCss folder */
 
 .procede-test {
   margin-top: 50px;
-  padding: 60px 80px;
+  padding: 100px 80px;
   color: #2b184d;
 }
 .box-container {
@@ -442,6 +442,7 @@ Others are in FaqSection.css in the FaqCss folder */
   text-align: left;
   padding-top: 15px;
 }
+
 
 /* Authenticated header styles */
 .header-enter-code {
@@ -717,10 +718,7 @@ Others are in FaqSection.css in the FaqCss folder */
   margin: 0 1rem;
   font-size: 1rem;
   color: #888;
-<<<<<<< HEAD
 }
-=======
-};
 
 /* media query */
 /* General mobile devices */
@@ -803,4 +801,3 @@ Others are in FaqSection.css in the FaqCss folder */
   }
 }
 
->>>>>>> c9d4a0cc1af32bb1510d3d3b042b86ae2206178d
