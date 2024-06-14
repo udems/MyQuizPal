@@ -8,8 +8,8 @@ import FeedbackHeader from '../component/FeedBack-Header';
 const CheckCorrectionsPage = () => {
   const navigate = useNavigate();
   const corrections = [
-    { question: '1. The situation in which parents are willing and are able to make sensible decisions regarding their family is referred to as?', correctAnswer: 'Responsible parenthood', explanation: '' },
-    { question: '3. All but one is not an important factor in responsible parenthood.', correctAnswer: 'Formal education', explanation: '' },
+    { question: '1. The act of giving birth in cattle is called ………', correctAnswer: 'Calving', explanation: '' },
+    { question: '3. Which one of the following is not a form of livestock management?', correctAnswer: 'Heat period', explanation: '' },
   ];
 
   const outerContainerStyle = {
@@ -91,7 +91,7 @@ const CheckCorrectionsPage = () => {
   return (
     <div style={outerContainerStyle}>
       <FeedbackHeader />
-      <FeedbackHeader name='Ryan' src={profileImg} style={{backgroundColor:'#673AB7'}}/>
+      { <FeedbackHeader name='Ryan' src={profileImg} style={{backgroundColor:'#673AB7'}}/> }
       <div style={mainContentStyle}>
         <div style={innerContainerStyle}>
           <h2 style={headerStyle}>Check Corrections</h2>
@@ -101,8 +101,8 @@ const CheckCorrectionsPage = () => {
                 <p><strong >{correction.question}</strong></p> <br /><br />
                 <p><strong>Correct Answer:</strong><br /><br /> {correction.correctAnswer}</p>
                 <p>{correction.explanation}</p>
-                <p>There is no particular order definition of responsible parenthood. However, it is referred to as the situation in which parents are willing and are able to make sensible decisions regarding their family.</p>
-                <p>The option ‘B’ Formal education is one of the roles of being a responsible parent. It involves the ability of the parents to send their children to good schools, buy necessary books for them, be sure to track and follow up with their academic progress.</p>
+                <p>As you know generally, the act of giving birth in animals is called paturition and they are different term given to that for each animals.</p>
+                <p>The option ‘C’ Calving is the act of giving birth in cattle.</p>
               </div>
             ))}
           </div>
