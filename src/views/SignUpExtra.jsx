@@ -58,7 +58,7 @@ const SignUp_Extra=()=>{
                 </div>
 
                 <button className='signUp-Google'>
-                <img src="src\assets\google_symbol.svg.png" alt="Google Logo" />
+                <img src="./src/assets/google_symbol.svg.png" alt="Google Logo" />
                     Sign Up with Google</button>
 
                 <p>Already have an account&#63; <Link to ="/signin" className='link-signin'>Sign In</Link></p>
