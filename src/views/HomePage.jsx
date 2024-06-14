@@ -4,6 +4,7 @@ import FaqSection from '../views/FaqSection';
 import { faqs } from '../data';
 import Button from '../component/button';
 import Footer from '../component/Footer';
+import pic1 from '../assets/istockphoto-861128944-170667a 1.png';
 
 function HomePage() {
 
@@ -22,7 +23,7 @@ function HomePage() {
                 </div>
             </div>
             <div className="img1">
-                <img src="src\assets\istockphoto-1490709077-170667a 1.png" alt="" />
+                <img src={pic1} alt="" />
             </div>
         </div>
         <div className="empower-flex" id='teachers'>
