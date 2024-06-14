@@ -724,7 +724,6 @@ Others are in FaqSection.css in the FaqCss folder */
 @media only screen and (max-width: 600px) {
   /* Styles for mobile devices */
   .header {
-    background-color: lightblue;
   }
 }
 
