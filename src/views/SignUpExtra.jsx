@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
-import { FaTimes, FaGoogle } from 'react-icons/fa';
+import { FaTimes} from 'react-icons/fa';
 import MYQUIZAImage from '../assets/MYQUIZA-removebg-preview.png';
 import profileImg from '../assets/pexels-olly-774909.jpg';
+import googleLogo from '../assets/google_symbol.svg.png';
 
 const SignUp_Extra=()=>{
 
@@ -58,7 +59,7 @@ const SignUp_Extra=()=>{
                 </div>
 
                 <button className='signUp-Google'>
-                <img src="./src/assets/google_symbol.svg.png" alt="Google Logo" />
+                <img src={googleLogo} alt="Google Logo" />
                     Sign Up with Google</button>
 
                 <p>Already have an account&#63; <Link to ="/signin" className='link-signin'>Sign In</Link></p>
