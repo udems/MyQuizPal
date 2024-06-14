@@ -3,6 +3,7 @@
 import { useNavigate } from 'react-router-dom';
 import Footer from '../component/Footer';
 import FeedbackHeader from '../component/FeedBack-Header';
+import profileImg from '../assets/pexels-olly-774909.jpg';
 
 
 const CheckCorrectionsPage = () => {
