@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import companyLogo from '../assets/Logo.png';
 
 const CodeVerificationPage = () => {
   const navigate = useNavigate();
@@ -125,7 +126,7 @@ const CodeVerificationPage = () => {
   return (
     <div style={containerStyle}>
       <div style={logoSectionStyle}>
-        <img src="src/assets/Logo.png" alt="Company Logo" style={logoStyle} />
+        <img src={companyLogo} alt="Company Logo" style={logoStyle} />
       </div>
       <div style={verificationSectionStyle}>
         <div style={cancelIconContainerStyle} onClick={() => navigate('/signup')}>

@@ -1,6 +1,7 @@
 // VerificationCompletePage.jsx
 // import React from 'react';
 import { Link } from 'react-router-dom';
+import alldone from '../assets/tick-circle.png';
 
 const VerificationCompletePage = () => {
   const containerStyle = {
@@ -37,7 +38,7 @@ const VerificationCompletePage = () => {
 
   return (
     <div style={containerStyle}>
-      <img src="src/assets/tick-circle.png" alt="All Done" style={{ width: '100px', marginBottom: '1rem' }} />
+      <img src={alldone} alt="All Done" style={{ width: '100px', marginBottom: '1rem' }} />
       <h2 style={headerStyle}>All done!</h2>
       <p style={sentenceStyle}>Your password has been reset</p>
       <Link to="/signin" style={linkStyle}>Back to Login</Link>

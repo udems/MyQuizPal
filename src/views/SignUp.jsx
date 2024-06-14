@@ -4,6 +4,8 @@ import { FaEye, FaEyeSlash, FaTimes,} from 'react-icons/fa';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import './SignUp.css';
+import companyLogo from '../assets/Logo.png';
+import googleLogo from '../assets/google_symbol.svg.png';
 
 
 const SignupPage = () => {
@@ -377,7 +379,7 @@ const SignupPage = () => {
         <FaTimes style={cancelIconStyle} />
       </div>
       <div style={logoSectionStyle}>
-        <img src="src\assets\Logo.png" alt="Company Logo" style={logoStyle} />
+        <img src={companyLogo} alt="Company Logo" style={logoStyle} />
       </div>
       <div style={signupSectionStyle}>
         <h2 style={headerStyle}>Welcome to MyQuizPal</h2>
@@ -427,7 +429,7 @@ const SignupPage = () => {
           <div style={lineStyle}></div>
         </div>
         <button style={googleButtonStyle} onClick={() => { /* Handle Google sign-in */ }}>
-          <img src="src\assets\google_symbol.svg.png" alt="Google Logo" style={googleLogoStyle} />
+          <img src={googleLogo} alt="Google Logo" style={googleLogoStyle} />
           Sign in with Google
         </button>
         <div style={signInLinkStyle}>

@@ -2,7 +2,11 @@ import Footer from '../component/Footer';
 import Button from '../component/button';
 import FeedbackHeader from '../component/FeedBack-Header';
 import profileImg from '../assets/pexels-olly-774909.jpg';
-
+import box1 from '../assets/Honesty.png';
+import box2 from '../assets/Choose.png';
+import box3 from '../assets/Time.png';
+import box4 from '../assets/Submit for Approval.png';
+import box5 from '../assets/Relax.png';
 
 export function ProcedeTestPage() {
     return(
@@ -12,27 +16,27 @@ export function ProcedeTestPage() {
            <h1>Our quiz platform is here to guide you through an engaging and <br/> interactive journey!</h1>
            <div className='box-container'>
                 <div className="box" style={{backgroundColor:'#D8D2E0'}}>
-                    <img src="src/assets/Honesty.png" alt="Box" className="box-image" />
+                    <img src={box1} alt="Box" className="box-image" />
                     <h3 className='box-text'>Read each questions carefully</h3>
                     <p className="box-text">Take your time to understand each question before selecting an answer.</p>
                 </div>
                 <div className="box" style={{backgroundColor:'#F3EFF9'}}>
-                    <img src="src/assets/Choose.png" alt="Box" className="box-image" />
+                    <img src={box2} alt="Box" className="box-image" />
                     <h3 className='box-text'>Choose the Best Answer</h3>
                     <p className="box-text">Select the option that you believe is the most accurate or appropriate response.</p>
                 </div>
                 <div className="box" style={{backgroundColor:'#AF9ED7'}}>
-                    <img src="src/assets/Time.png" alt="Box" className="box-image" />
+                    <img src={box3} alt="Box" className="box-image" />
                     <h3 className='box-text'>Keep Track of Time</h3>
                     <p className="box-text">This is a timed quiz, monitor the timer to ensure you complete the quiz within the allocated time.</p>
                 </div>
                 <div className="box" style={{backgroundColor:'#512DA8', color:'white'}}>
-                    <img src="src/assets/Submit for Approval.png" alt="Box" className="box-image" />
+                    <img src={box4} alt="Box" className="box-image" />
                     <h3 className='box-text'>Submit Your Answers</h3>
                     <p className="box-text">Once youve answered all the questions, click the Submit button to see your results.</p>
                 </div>
                 <div className="box" style={{backgroundColor:'#EBEBEB'}}>
-                    <img src="src/assets/Relax.png" alt="Box" className="box-image" />
+                    <img src={box5} alt="Box" className="box-image" />
                     <h3 className='box-text'>Enjoy the Quiz</h3>
                     <p className="box-text">Relax, have fun, and test your knowledge! Good luck!</p>
                 </div>
