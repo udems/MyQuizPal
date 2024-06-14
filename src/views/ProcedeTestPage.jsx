@@ -7,14 +7,15 @@ import box2 from '../assets/Choose.png';
 import box3 from '../assets/Time.png';
 import box4 from '../assets/Submit for Approval.png';
 import box5 from '../assets/Relax.png';
+// import { BiBorderBottom } from 'react-icons/bi';
 
 export function ProcedeTestPage() {
     return(
         <>
         <FeedbackHeader name='Ryan' src={profileImg} style={{backgroundColor: '#673AB7'}}/>
-        <div className='procede-test'>
+        <div className='procede-test' style={{ borderBottom: '1px solid #555555'}}>
            <h1>Our quiz platform is here to guide you through an engaging and <br/> interactive journey!</h1>
-           <div className='box-container'>
+           <div className='box-container'  >
                 <div className="box" style={{backgroundColor:'#D8D2E0'}}>
                     <img src={box1} alt="Box" className="box-image" />
                     <h3 className='box-text'>Read each questions carefully</h3>
@@ -41,12 +42,12 @@ export function ProcedeTestPage() {
                     <p className="box-text">Relax, have fun, and test your knowledge! Good luck!</p>
                 </div>
            </div>
-           <div style={{display:'flex', gap:'600px', paddingTop:'30px'}}>
+           <div style={{display:'flex', gap:'500px', paddingTop:'30px'}}>
                 <p style={{fontSize:'24px'}}>Lets dive in and embark on this quiz adventure together! Click <br/> the Start Quiz button to begin your quest for knowledge.</p>
                 <Button text="Start quiz" onClick={() => { window.location.href = '/quiz'; }} />
            </div>
-        </div>
-        <Footer/>
+        </div >
+        < Footer/>
         </>
     );
 }

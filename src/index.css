@@ -417,7 +417,7 @@ Others are in FaqSection.css in the FaqCss folder */
 
 .procede-test {
   margin-top: 50px;
-  padding: 60px 80px;
+  padding: 100px 80px;
   color: #2b184d;
 }
 .box-container {
@@ -442,6 +442,7 @@ Others are in FaqSection.css in the FaqCss folder */
   text-align: left;
   padding-top: 15px;
 }
+
 
 /* Authenticated header styles */
 .header-enter-code {
