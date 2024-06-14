@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import Button from '../component/button';
 // import { Link } from 'react-router-dom';
-import {logo} from '../assets/MYQUIZA-removebg-preview.png';
+import logo from '../assets/MYQUIZA-removebg-preview.png';
 
 
 function Header(){
