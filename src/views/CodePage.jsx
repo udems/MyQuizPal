@@ -1,12 +1,13 @@
 import Footer from '../component/Footer'
 import Button from '../component/Button';
-import EnterCode from '../component/EnterCode-Header';
+import FeedbackHeader from '../component/FeedBack-Header';
+import profileImg from '../assets/pexels-olly-774909.jpg';
 
 export function CodePage() {
     return(
         <>
-        <EnterCode/>
-        <div className='enter-code'>
+            <FeedbackHeader name='Ryan' src={profileImg} />
+            <div className='enter-code'>
             <h1>MYQUIZPAL</h1>
             {/* <label htmlFor="code">Enter Your Code</label> */}
             <div>

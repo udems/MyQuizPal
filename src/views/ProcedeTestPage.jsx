@@ -1,11 +1,13 @@
 import Footer from '../component/Footer';
 import Button from '../component/Button';
-// import EnterCode from '../component/EnterCode-Header';
+import FeedbackHeader from '../component/FeedBack-Header';
+import profileImg from '../assets/pexels-olly-774909.jpg';
 
 
 export function ProcedeTestPage() {
     return(
         <>
+        <FeedbackHeader name='Ryan' src={profileImg} style={{backgroundColor: '#673AB7'}}/>
         <div className='procede-test'>
            <h1>Our quiz platform is here to guide you through an engaging and <br/> interactive journey!</h1>
            <div className='box-container'>

@@ -294,6 +294,17 @@ body {
   display: flex;
   gap: 30px;
 }
+.header-nav-buttons button{
+  color: #673AB7;
+}
+.header-nav-buttons .btn-signup{
+  background-color: transparent;
+  color: white;
+  transition: background-color 1s ease-in;
+}
+.header-nav-buttons .btn-signup:hover{
+  background-color: #2b184d;
+}
 .header-logo-links {
   display: flex;
   gap: 50px;
@@ -405,6 +416,7 @@ Others are in FaqSection.css in the FaqCss folder */
 /* procede test page styling  */
 
 .procede-test {
+  margin-top: 50px;
   padding: 60px 80px;
   color: #2b184d;
 }
@@ -447,6 +459,7 @@ Others are in FaqSection.css in the FaqCss folder */
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 5px;
 }
 
 .quiz-img {
@@ -458,17 +471,20 @@ Others are in FaqSection.css in the FaqCss folder */
 .header-others {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   color: white;
-  margin-right: 2%;
+  margin-right: -2rem;
+  font-size: 1rem;
 }
 
-.btn-assessment {
+.header-others .btn-assessment {
   background-color: transparent;
   border: 1px solid white;
-  margin-right: 20px;
   color: white;
-  padding: 12px 46px;
+  font-size: 0.9rem;
+  padding: 12px 13px;
+  width: 12rem;
+  margin-right: 20px;
 }
 
 .word-container {
@@ -703,4 +719,85 @@ Others are in FaqSection.css in the FaqCss folder */
   font-size: 1rem;
   color: #888;
 };
+
+/* media query */
+/* General mobile devices */
+@media only screen and (max-width: 600px) {
+  /* Styles for mobile devices */
+  .header {
+    background-color: lightblue;
+    
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 700px) {
+  .header {
+    padding: 5px 0;
+    padding-right: 2px;
+    font-size: 0.8rem;
+  }
+  .header-logo-links{
+    gap: 10px;
+  }
+  .header-nav-buttons{
+    gap: 5px;
+    margin-left: 4px;
+  }
+  .header-nav-buttons button{
+    font-size: 0.7rem;
+  }
+  .header-nav-links{
+    gap: 15px;
+  }
+  .word-container{
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 800px) {
+  .header {
+    padding: 5px 0;
+    padding-right: 10px;
+    font-size: 1rem;
+  }
+  .header-logo-links{
+    gap: 10px;
+  }
+  
+  .header-nav-buttons{
+    gap: 5px;
+  }
+  .header-nav-buttons button{
+    font-size: 0.8rem;
+  }
+  .word-container{
+    display: none;
+  }
+}
+
+
+@media only screen and (min-width: 800px) and (max-width: 950px) {
+  .header {
+    padding: 5px 0;
+    padding-right: 30px;
+    font-size: 1rem;
+  }
+  .header-nav-buttons{
+    gap: 5px;
+  }
+  .word-container{
+    display: none;
+  }
+}
+
+
+@media (min-width: 950px) and (max-width: 1080px) {
+  .header{
+    padding: 5px 0;
+    padding-right: 30px;
+  } 
+  .header-nav-buttons{
+    gap: 5px;
+  }
+}
 
