@@ -235,7 +235,122 @@ const SignInPage = () => {
     cursor: 'pointer',
     opacity: '0.4', // Make the eye icon transparent
   };
-
+  const mediaQueryStyles = {
+    containerStyle: {
+      ...containerStyle,
+      flexDirection: 'column',
+      height: 'auto',
+    },
+    logoSectionStyle: {
+      ...logoSectionStyle,
+      flex: 'none',
+      width: '100%',
+      height: 'auto',
+      padding: '10px',
+    },
+    signinSectionStyle: {
+      ...signinSectionStyle,
+      flex: 'none',
+      width: '100%',
+      padding: '1rem',
+    },
+    headerStyle: {
+      ...headerStyle,
+      fontSize: '1.5rem',
+      marginBottom: '0.5rem',
+    },
+    sentenceStyle: {
+      ...sentenceStyle,
+      fontSize: '0.9rem',
+      marginBottom: '1rem',
+    },
+    formGroupStyle: {
+      ...formGroupStyle,
+      marginBottom: '0.75rem',
+    },
+    labelStyle: {
+      ...labelStyle,
+      marginLeft: '0', // Adjust label margin as needed
+    },
+    inputStyle: {
+      ...inputStyle,
+      width: 'calc(100% - 20px)', // Adjust input width to accommodate padding and border
+      marginLeft: '0', // Adjust input margin as needed
+    },
+    forgotPasswordStyle: {
+      ...forgotPasswordStyle,
+      textAlign: 'left',
+    },
+    buttonStyle: {
+      ...buttonStyle,
+      width: '100%',
+    },
+    googleButtonStyle: {
+      ...googleButtonStyle,
+      width: '100%',
+      fontSize: '1rem',
+    },
+    orSeparatorStyle: {
+      ...orSeparatorStyle,
+      marginLeft: '0',
+      width: '100%',
+    },
+    lineStyle: {
+      ...lineStyle,
+      height: '0.5px', // Adjust line height if needed
+    },
+    orTextStyle: {
+      ...orTextStyle,
+      fontSize: '0.9rem',
+    },
+    signupLinkStyle: {
+      ...signupLinkStyle,
+      marginTop: '0.5rem',
+      textAlign: 'left',
+    },
+    cancelIconContainerStyle: {
+      ...cancelIconContainerStyle,
+      right: '14px',
+    },
+    cancelIconStyle: {
+      ...cancelIconStyle,
+      fontSize: '10px', // Adjust cancel icon size if needed
+    },
+    eyeIconStyle: {
+      ...eyeIconStyle,
+      right: '10px',
+    },
+  };
+  
+  // Apply the media query styles if the window width is less than or equal to 740px
+  const applyMediaQueryStyles = () => {
+    if (window.innerWidth <= 740) {
+      Object.assign(containerStyle, mediaQueryStyles.containerStyle);
+      Object.assign(logoSectionStyle, mediaQueryStyles.logoSectionStyle);
+      Object.assign(signinSectionStyle, mediaQueryStyles.signinSectionStyle);
+      Object.assign(headerStyle, mediaQueryStyles.headerStyle);
+      Object.assign(sentenceStyle, mediaQueryStyles.sentenceStyle);
+      Object.assign(formGroupStyle, mediaQueryStyles.formGroupStyle);
+      Object.assign(labelStyle, mediaQueryStyles.labelStyle);
+      Object.assign(inputStyle, mediaQueryStyles.inputStyle);
+      Object.assign(forgotPasswordStyle, mediaQueryStyles.forgotPasswordStyle);
+      Object.assign(buttonStyle, mediaQueryStyles.buttonStyle);
+      Object.assign(googleButtonStyle, mediaQueryStyles.googleButtonStyle);
+      Object.assign(orSeparatorStyle, mediaQueryStyles.orSeparatorStyle);
+      Object.assign(lineStyle, mediaQueryStyles.lineStyle);
+      Object.assign(orTextStyle, mediaQueryStyles.orTextStyle);
+      Object.assign(signupLinkStyle, mediaQueryStyles.signupLinkStyle);
+      Object.assign(cancelIconContainerStyle, mediaQueryStyles.cancelIconContainerStyle);
+      Object.assign(cancelIconStyle, mediaQueryStyles.cancelIconStyle);
+      Object.assign(eyeIconStyle, mediaQueryStyles.eyeIconStyle);
+    }
+  };
+  
+  // Initial application of media query styles
+  applyMediaQueryStyles();
+  
+  // Re-apply media query styles on window resize
+  window.addEventListener('resize', applyMediaQueryStyles);
   return (
     <div style={containerStyle}>
       <div style={logoSectionStyle}>

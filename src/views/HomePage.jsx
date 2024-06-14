@@ -1,4 +1,3 @@
-
 import Header from '../component/Header';
 import FaqSection from '../views/FaqSection';
 import { faqs } from '../data';

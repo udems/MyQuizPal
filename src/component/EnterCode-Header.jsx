@@ -1,5 +1,6 @@
 import MYQUIZAImage from '../assets/MYQUIZA-removebg-preview.png';
 import Button from './button';
+// import profileImg from '../assets/pexels-olly-774909.jpg';
 
 const EnterCode = ()=>{
     return (

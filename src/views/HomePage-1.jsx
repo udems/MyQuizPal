@@ -19,7 +19,7 @@ function HomePage1() {
                 </p>
                 <div className='interact-button-1'><Button text="Register School" onClick={() => { window.location.href = '/signup'; }} /></div>
                 <div className='interact-button-2'>
-                <Button text="Practice quiz" onClick={() => { window.location.href = '/code'; }} />
+                <Button text="Practice quiz" onClick={() => { window.location.href = '/practice-quiz'; }} />
                 </div>
             </div>
             <div className="img1">

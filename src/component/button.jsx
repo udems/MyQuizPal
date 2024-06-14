@@ -1,6 +1,4 @@
-
 import PropTypes from 'prop-types';
-
 
 const Button = ({ text, onClick, type = 'button', className = '' }) => {
     return (
