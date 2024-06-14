@@ -1,5 +1,5 @@
 import Footer from '../component/Footer';
-import Button from '../component/Button';
+import Button from '../component/button';
 import FeedbackHeader from '../component/FeedBack-Header';
 import profileImg from '../assets/pexels-olly-774909.jpg';
 

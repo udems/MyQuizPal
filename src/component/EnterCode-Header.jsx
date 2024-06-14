@@ -1,5 +1,5 @@
 import MYQUIZAImage from '../assets/MYQUIZA-removebg-preview.png';
-import Button from './Button';
+import Button from './button';
 
 const EnterCode = ()=>{
     return (
@@ -13,4 +13,4 @@ const EnterCode = ()=>{
         </header>
     )
 }
-export default EnterCode
+export default EnterCode;

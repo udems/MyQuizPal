@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import MYQUIZAImage from '../assets/MYQUIZA-removebg-preview.png';
 import { Link } from 'react-router-dom';
-import Button from './Button';
+import Button from './button';
 import PropTypes from 'prop-types';
 
 
@@ -68,4 +68,4 @@ AuthentcatedHeader.defaultProps={
     src:'https://via.placeholder.com/50?text=G',
     alt:'Guest'
 }
-export default AuthentcatedHeader
+export default AuthentcatedHeader;

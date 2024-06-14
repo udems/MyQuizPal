@@ -1,6 +1,6 @@
 import MYQUIZAImage from '../assets/MYQUIZA-removebg-preview.png';
-import { useEffect, useState } from "react"
-import PropTypes from 'prop-types'
+import { useEffect, useState } from "react";
+import PropTypes from 'prop-types';
 
 const FeedbackHeader=({name,src,alt})=>{
     const [opacity, setOpacity] = useState(1);
@@ -47,4 +47,4 @@ FeedbackHeader.defaultProps={
 }
 
 
-export default FeedbackHeader
+export default FeedbackHeader;

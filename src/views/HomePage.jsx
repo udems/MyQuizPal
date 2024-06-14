@@ -2,8 +2,8 @@
 import Header from '../component/Header';
 import FaqSection from '../views/FaqSection';
 import { faqs } from '../data';
-import Button from '../component/Button'
-import Footer from '../component/Footer'
+import Button from '../component/button';
+import Footer from '../component/Footer';
 
 function HomePage() {
 
@@ -90,4 +90,4 @@ function HomePage() {
     )
 }
 
-export default HomePage
+export default HomePage;

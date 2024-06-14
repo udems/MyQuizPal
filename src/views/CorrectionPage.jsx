@@ -1,5 +1,5 @@
 // CheckCorrectionsPage.jsx
-import React from 'react';
+// import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../component/Footer';
 import FeedbackHeader from '../component/FeedBack-Header';
@@ -71,11 +71,11 @@ const CheckCorrectionsPage = () => {
     fontWeight: 'bold',
   };
 
-  const sentenceStyle = {
-    fontSize: '1rem',
-    marginBottom: '1rem',
-    textAlign: 'center',
-  };
+  // const sentenceStyle = {
+  //   fontSize: '1rem',
+  //   marginBottom: '1rem',
+  //   textAlign: 'center',
+  // };
 
   const buttonContainerStyle = {
     display: 'flex',
