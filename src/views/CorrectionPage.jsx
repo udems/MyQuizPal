@@ -91,7 +91,7 @@ const CheckCorrectionsPage = () => {
 
   return (
     <div style={outerContainerStyle}>
-      <FeedbackHeader />
+      
       <FeedbackHeader name='Ryan' src={profileImg} style={{backgroundColor:'#673AB7'}}/>
       <div style={mainContentStyle}>
         <div style={innerContainerStyle}>
