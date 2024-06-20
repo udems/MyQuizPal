@@ -443,7 +443,6 @@ Others are in FaqSection.css in the FaqCss folder */
   padding-top: 15px;
 }
 
-
 /* Authenticated header styles */
 .header-enter-code {
   background-color: #3a2077;
@@ -795,4 +794,83 @@ Others are in FaqSection.css in the FaqCss folder */
   .header-nav-buttons {
     gap: 5px;
   }
+}
+
+.header header-enter-code {
+  position: relative;
+}
+
+.profile-img-feedback {
+  width: 55px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 70px;
+  right: 15px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: 17rem;
+  height: 13rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #000;
+}
+
+.profile-img-dropdown {
+  width: 48px;
+  height: 43px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.email {
+  margin-top: 0.5rem;
+  color: gray;
+  font-size: 0.8em;
+}
+
+hr {
+  border: none; /* Remove the default border */
+  border-top: 1px solid #000; /* Add a top border */
+  margin: 10px 0;
+  width: 15rem;
+  margin-left: 1rem;
+  margin-top: 3rem;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  color: #000;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown-item i {
+  margin-right: 10px;
+}
+
+.icon {
+  color: gray;
+  margin-right: 10px;
+}
+
+.icon2 {
+  color: red;
+  margin-right: 10px;
 }

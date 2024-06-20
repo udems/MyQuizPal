@@ -1,16 +1,22 @@
-import { useState, useEffect } from 'react';
-import { FaStopwatch } from 'react-icons/fa';
-import PropTypes from 'prop-types';
-import Modal from 'react-modal';
+import { useState, useEffect } from "react";
+import { FaStopwatch } from "react-icons/fa";
+import PropTypes from "prop-types";
+import Modal from "react-modal";
 
-const QuestionPage = ({ questionData, questionNumber, totalQuestions, handleNextQuestion, handlePreviousQuestion }) => {
+const QuestionPage = ({
+  questionData,
+  questionNumber,
+  totalQuestions,
+  handleNextQuestion,
+  handlePreviousQuestion,
+}) => {
   const [seconds, setSeconds] = useState(0);
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(-1); // State to track selected option index
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setSeconds(prev => prev + 1);
+      setSeconds((prev) => prev + 1);
     }, 1000);
 
     return () => clearInterval(timer);
@@ -24,7 +30,7 @@ const QuestionPage = ({ questionData, questionNumber, totalQuestions, handleNext
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const secs = seconds % 60;
-    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+    return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
   };
 
   const handleOptionClick = (optionIndex) => {
@@ -43,179 +49,175 @@ const QuestionPage = ({ questionData, questionNumber, totalQuestions, handleNext
     setIsModalOpen(false);
   };
 
-  // const handleSubmit = () => {
-  //   // Handle the submit action here
-  //   console.log('Submit');
-  //   setIsModalOpen(false);
-  // };
-
   const containerStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    height: '120vh',
-    backgroundColor: '#3a2077',
-    paddingTop: '10rem',
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    height: "120vh",
+    backgroundColor: "#3a2077",
+    paddingTop: "10rem",
   };
 
   const headerStyle = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    width: '80%',
-    marginBottom: '2rem',
-    color: '#fff',
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "80%",
+    marginBottom: "2rem",
+    color: "#fff",
   };
 
   const questionBoxStyle = {
-    backgroundColor: '#3a2077',
-    padding: '2rem',
-    borderRadius: '10px',
-    border: '1px solid #fff',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    position: 'relative',
-    marginBottom: '5rem',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '9.375rem',
-    width: '50rem',
-    color: '#fff',
-    fontWeight: '700',
+    backgroundColor: "#3a2077",
+    padding: "2rem",
+    borderRadius: "10px",
+    border: "1px solid #fff",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    position: "relative",
+    marginBottom: "5rem",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "9.375rem",
+    width: "50rem",
+    color: "#fff",
+    fontWeight: "700",
   };
 
   const questionLineStyleLeft = {
-    position: 'absolute',
-    height: '2px',
-    width: '20%',
-    backgroundColor: '#fff',
-    left: '-10rem',
-    top: '50%',
-    transform: 'translateY(-50%)',
+    position: "absolute",
+    height: "2px",
+    width: "20%",
+    backgroundColor: "#fff",
+    left: "-10rem",
+    top: "50%",
+    transform: "translateY(-50%)",
   };
 
   const questionLineStyleRight = {
-    position: 'absolute',
-    height: '2px',
-    width: '20%',
-    backgroundColor: '#fff',
-    right: '-10rem',
-    top: '50%',
-    transform: 'translateY(-50%)',
+    position: "absolute",
+    height: "2px",
+    width: "20%",
+    backgroundColor: "#fff",
+    right: "-10rem",
+    top: "50%",
+    transform: "translateY(-50%)",
   };
 
   const optionsContainerStyle = {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    width: '100%',
-    color: '#fff',
-    fontWeight: '700',
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    width: "100%",
+    color: "#fff",
+    fontWeight: "700",
   };
 
   const optionBoxStyle = {
-    backgroundColor: '#3a2077',
-    padding: '1rem',
-    borderRadius: '10px',
-    border: '1px solid #fff',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    width: '28%',
-    margin: '2.7rem',
-    position: 'relative',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '50px',
-    cursor: 'pointer',
+    backgroundColor: "#3a2077",
+    padding: "1rem",
+    borderRadius: "10px",
+    border: "1px solid #fff",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    width: "28%",
+    margin: "2.7rem",
+    position: "relative",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "50px",
+    cursor: "pointer",
   };
 
   const optionLineStyleLeft = {
-    position: 'absolute',
-    height: '2px',
-    width: '20%',
-    backgroundColor: '#fff',
-    left: '-5rem',
-    top: '50%',
-    transform: 'translateY(-50%)',
+    position: "absolute",
+    height: "2px",
+    width: "20%",
+    backgroundColor: "#fff",
+    left: "-5rem",
+    top: "50%",
+    transform: "translateY(-50%)",
   };
 
   const optionLineStyleRight = {
-    position: 'absolute',
-    height: '2px',
-    width: '20%',
-    backgroundColor: '#fff',
-    right: '-5rem',
-    top: '50%',
-    transform: 'translateY(-50%)',
+    position: "absolute",
+    height: "2px",
+    width: "20%",
+    backgroundColor: "#fff",
+    right: "-5rem",
+    top: "50%",
+    transform: "translateY(-50%)",
   };
 
   const buttonContainerStyle = {
-    display: 'flex',
-    justifyContent: questionNumber === 1 ? 'flex-end' : 'space-between',
-    width: '80%',
-    marginTop: '2rem',
+    display: "flex",
+    justifyContent: questionNumber === 1 ? "flex-end" : "space-between",
+    width: "80%",
+    marginTop: "2rem",
   };
 
   const buttonStyle = {
-    padding: '0.5rem 1rem',
-    backgroundColor: '#673ab7',
-    color: '#fff',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    width: '12rem',
-    height: '7vh',
-    fontWeight: '700',
-    marginLeft: '1.5rem',
+    padding: "0.5rem 1rem",
+    backgroundColor: "#673ab7",
+    color: "#fff",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+    width: "12rem",
+    height: "7vh",
+    fontWeight: "700",
+    marginLeft: "1.5rem",
   };
 
   const modalStyles = {
     content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
-      backgroundColor: '#fff',
-      color: '#673ab7',
-      borderRadius: '10px',
-      border: '1px solid #ccc',
-      textAlign: 'center',
-      width: '35vw',
-      height: '32vh',
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      backgroundColor: "#fff",
+      color: "#673ab7",
+      borderRadius: "10px",
+      border: "1px solid #ccc",
+      textAlign: "center",
+      width: "35vw",
+      height: "32vh",
     },
   };
 
   const modalButtonContainerStyle = {
-    display: 'flex',
-    justifyContent: 'space-around',
-    marginTop:'5rem',
+    display: "flex",
+    justifyContent: "space-around",
+    marginTop: "5rem",
   };
 
   const modalButtonStyle = {
     ...buttonStyle,
-    backgroundColor: '#EDE7F6',
-    color: '#673ab7', 
-    width: '10rem',
-    height: '6vh',
-    fontWeight: '700',// Different color for modal buttons
+    backgroundColor: "#EDE7F6",
+    color: "#673ab7",
+    width: "10rem",
+    height: "6vh",
+    fontWeight: "700", // Different color for modal buttons
   };
 
   const modalButtonStyle2 = {
     ...buttonStyle,
-    backgroundColor: '#673ab7', 
-    width: '10rem',
-    height: '6vh',
-    fontWeight: '700',// Different color for modal buttons
+    backgroundColor: "#673ab7",
+    width: "10rem",
+    height: "6vh",
+    fontWeight: "700", // Different color for modal buttons
   };
 
   return (
     <div style={containerStyle}>
       <div style={headerStyle}>
-        <h2>Question {questionNumber}/{totalQuestions}</h2>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <FaStopwatch style={{ marginRight: '0.5rem' }} />
+        <h2>
+          Question {questionNumber}/{totalQuestions}
+        </h2>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <FaStopwatch style={{ marginRight: "0.5rem" }} />
           <span>{formatTime(seconds)}</span>
         </div>
       </div>
@@ -230,8 +232,11 @@ const QuestionPage = ({ questionData, questionNumber, totalQuestions, handleNext
             key={index}
             style={{
               ...optionBoxStyle,
-              backgroundColor: selectedOptionIndex === index ? '#fff' : optionBoxStyle.backgroundColor,
-              color: selectedOptionIndex === index ? 'purple' : '#fff',
+              backgroundColor:
+                selectedOptionIndex === index
+                  ? "#fff"
+                  : optionBoxStyle.backgroundColor,
+              color: selectedOptionIndex === index ? "purple" : "#fff",
             }}
             onClick={() => handleOptionClick(index)}
           >
@@ -269,7 +274,12 @@ const QuestionPage = ({ questionData, questionNumber, totalQuestions, handleNext
           <button style={modalButtonStyle} onClick={handleCloseModal}>
             Cancel
           </button>
-          <button style={modalButtonStyle2} onClick={()=>{window.location.href='/quiz-completion'}} >
+          <button
+            style={modalButtonStyle2}
+            onClick={() => {
+              window.location.href = "/quiz-completion";
+            }}
+          >
             Submit
           </button>
         </div>
