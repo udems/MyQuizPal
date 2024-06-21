@@ -16,7 +16,7 @@ export function CodePage() {
     }
     return(
         <>
-            <FeedbackHeader name='Ryan' src={profileImg} />
+            <FeedbackHeader name='Sawyer Ryan' src={profileImg} />
             <div className='enter-code'>
             <h1>MYQUIZPAL</h1>
             {/* <label htmlFor="code">Enter Your Code</label> */}
