@@ -14,7 +14,7 @@ function HomePage1() {
 
     return(
         <>
-        <AuthentcatedHeader name='Ryan' src={profileImg}/>
+        <AuthentcatedHeader name='Sawyer Ryan' src={profileImg}/>
 
         <div className="interact-flex" >
             <div className="interact">
