@@ -85,7 +85,7 @@ const QuizCompletionPage = () => {
 
   return (
     <div style={outerContainerStyle}>
-      <FeedbackHeader name='Ryan' src={profileImg} style={{backgroundColor: '#673AB7'}}/>
+      <FeedbackHeader name='Sawyer Ryan' src={profileImg} style={{backgroundColor: '#673AB7'}}/>
       <div style={mainContentStyle}>
         <div style={innerContainerStyle}>
           <div style={{ width: '180px', height: '180px', marginBottom: '1rem', marginLeft: '10rem' }}>
