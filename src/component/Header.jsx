@@ -38,7 +38,7 @@ function Header(){
                 </div>
                 <div className="header-nav-buttons">
                     <Button text="Log in" onClick={() => { window.location.href = '/signin'; }} />
-                    <Button text="Sign up" onClick={() => { window.location.href = '/signup'; }}className='btn-signup' />
+                    <Button text="Sign up" onClick={() => { window.location.href = '/signup-addition'; }}className='btn-signup' />
                 </div>
             </nav>
         </header>
